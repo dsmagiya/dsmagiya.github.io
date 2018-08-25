@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hux Blog</title>
-    <description>关于前端与设计、黑客与画家 | 黄玄，Web &amp; Mobile Lover，Software Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。</description>
+    <title>Desheng's Blog</title>
+    <description> | Desheng Ma, Physics Major. | </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 24 Aug 2018 02:37:51 -0400</pubDate>
-    <lastBuildDate>Fri, 24 Aug 2018 02:37:51 -0400</lastBuildDate>
+    <pubDate>Fri, 24 Aug 2018 18:29:35 -0400</pubDate>
+    <lastBuildDate>Fri, 24 Aug 2018 18:29:35 -0400</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
-        <title>饿了么的 PWA 升级实践</title>
+        <title>物理想不明白 </title>
         <description>&lt;!-- Chinese Version --&gt;
 &lt;div class=&quot;zh post-container&quot;&gt;
     
@@ -42,7 +42,7 @@
 
 &lt;p&gt;在多页应用中，每一个路由本来就只会请求这个路由所需要的资源，并且通常依赖也都比较扁平。饿了么移动站的大部分脚本依赖都是普通的 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt;&lt;/code&gt; 元素，因此他们可以在文档解析早期就被浏览器的 preloader 扫描出来并且开始请求，其效果其实与显式的 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;link rel=&quot;preload&quot;&amp;gt;&lt;/code&gt; 是一致的。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-eleme-pwa/PUSH-link-rel-preload.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/cantphysics/PUSH-link-rel-preload.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;我们还将所有关键的静态资源都伺服在同一域名下（不再做域名散列），以更好的利用 HTTP2 带来的多路复用（Multiplexing）。同时，我们也在进行着对 API 进行 Server Push 的&lt;a href=&quot;https://zhuanlan.zhihu.com/p/26757514&quot;&gt;实验&lt;/a&gt;。&lt;/p&gt;
 
@@ -54,7 +54,7 @@
 
 &lt;p&gt;这一部分就需要 &lt;a href=&quot;https://w3c.github.io/ServiceWorker/v1/&quot;&gt;Service Worker&lt;/a&gt; 的参与了，Service Worker 是一个位于浏览器与网络之间的客户端代理，它以可拦截、处理、响应流经的 HTTP 请求，使得开发者得以从缓存中向 web 应用提供资源而闻名。不过，Service Worker 其实也可以主动发起 HTTP 请求，在“后台” 预请求与预缓存我们未来所需要的资源。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-eleme-pwa/PRECACHE-future-routes.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/cantphysics/PRECACHE-future-routes.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;我们已经使用 &lt;a href=&quot;https://webpack.github.io/&quot;&gt;Webpack&lt;/a&gt; 在构建过程中进行 &lt;code class=&quot;highlighter-rouge&quot;&gt;.vue&lt;/code&gt; 编译、文件名哈希等工作，于是我们编写了一个 webpack 插件来帮助我们收集需要缓存的依赖到一个“预缓存清单”中，并使用这个清单在每次构建时生成新的 Service Worker 文件。在新的 Service Worker 被激活时，清单里的资源就会被请求与缓存，这其实与 &lt;a href=&quot;https://medium.com/@Huxpro/how-does-sw-precache-works-2d99c3d3c725&quot;&gt;SW-Precache 这个库的运行机制&lt;/a&gt;非常接近。&lt;/p&gt;
 
@@ -70,13 +70,13 @@
 
 &lt;p&gt;这四句话即是 PRPL 的全部了。有趣的是，我们发现多页应用在实现 PRPL 这件事甚至比单页还要容易一些。那么结果如何呢？&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-eleme-pwa/Lighthouse-before.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/cantphysics/Lighthouse-before.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;根据 Google 推出的 Web 性能分析工具 Lighthouse（v1.6），在模拟的 3G 网络下，用户的初次访问（无任何缓存）大约在 2 秒左右达到“可交互”，可以说非常不错。而对于再次访问，由于所有资源都直接来自于 Service Worker 缓存，页面可以在 1 秒左右就达到可交互的状态了。&lt;/p&gt;
 
 &lt;p&gt;但是，故事并不是这么简单得就结束了。在实际的体验中我们发现，&lt;strong&gt;应用在页与页的切换时，仍然存在着非常明显的白屏空隙&lt;/strong&gt;，由于 PWA 是全屏运行的，白屏对用户体验所带来的负面影响甚至比以往在浏览器内更大。我们不是已经用 Service Worker 缓存了所有资源了吗，怎么还会这样呢？&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-eleme-pwa/before-skeleton.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/cantphysics/before-skeleton.jpg&quot; alt=&quot;&quot; /&gt;
 &lt;em&gt;从首页点击到发现页，跳转过程中的白屏&lt;/em&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;多页应用的陷阱重启开销&quot;&gt;多页应用的陷阱：重启开销&lt;/h2&gt;
@@ -85,7 +85,7 @@
 
 &lt;p&gt;图中为我们的入口页（同时也是最重的页面）在 2 倍 CPU 节流模拟下的 profile 数据。即使我们可以将“可交互时间”控制在 1 秒左右，我们的用户仍然会觉得这对于“仅仅切换个标签”来说实在是太慢了。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-eleme-pwa/msite-Before-Optim.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/cantphysics/msite-Before-Optim.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;巨大的-javascript-重启开销&quot;&gt;巨大的 JavaScript 重启开销&lt;/h3&gt;
 
@@ -111,7 +111,7 @@
 
 &lt;p&gt;为了消除白屏时间，我们同样引入了尺寸稳定的骨架屏来帮助我们实现瞬间的加载与占位。即使是在硬件很弱的设备上，我们也可以在点击切换标签后立刻渲染出目标路由的骨架屏，以保证 UI 是稳定、连续、有响应的。我录了&lt;a href=&quot;https://youtu.be/K5JBGnMYO1s&quot;&gt;两个&lt;/a&gt;&lt;a href=&quot;https://youtu.be/w1ZbNsHmRjs&quot;&gt;视频&lt;/a&gt;放在 Youtube 上，不过如果你是国内读者，你可以直接访问饿了么移动网站来体验实地的效果 ;) 最终效果如下图所示。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-eleme-pwa/after-skeleton.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/cantphysics/after-skeleton.jpg&quot; alt=&quot;&quot; /&gt;
 &lt;em&gt;在添加骨架屏后，从发现页点回首页的效果&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;这效果本该很轻松的就能实现，不过实际上我们还费了点功夫。&lt;/p&gt;
@@ -134,7 +134,7 @@
 
 &lt;p&gt;&lt;strong&gt;而更重要的是，一个不阻塞 HTML 解析的脚本仍然可能阻塞到绘制。&lt;/strong&gt;我做了一个简化的&lt;strong&gt;“最小多页 PWA”&lt;/strong&gt;（Minimal Multi-page PWA，或 MMPWA）来测试这个问题，：我们在一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;async&lt;/code&gt;（且确实不阻塞 HTML 解析）脚本中，生成并渲染 1000 个列表项，然后测试骨架屏能否在脚本执行之前渲染出来。下面是通过 USB Debugging 在我的 Nexus 5 真机上录制的 profile：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-eleme-pwa/thisTick-&amp;amp;-Load.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/cantphysics/thisTick-&amp;amp;-Load.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;是的，出乎意料吗？首次渲染确实被阻塞到脚本执行结束后才发生。究其原因，&lt;strong&gt;如果我们在浏览器还未完成上一次绘制工作之前就过快得进行了 DOM 操作，我们亲爱的浏览器就只好抛弃所有它已经完成的像素，且一直要等待到 DOM 操作引起的所有工作结束之后才能重新进行下一次渲染。&lt;/strong&gt;而这种情况更容易在拥有较慢 CPU/GPU 的移动设备上出现。&lt;/p&gt;
 
@@ -142,13 +142,13 @@
 
 &lt;p&gt;不难发现，骨架屏的绘制与脚本执行实际是一个竞态。大概是 Vue 太快了，我们的骨架屏还是有非常大的概率绘制不出来。于是我们想着如何能让脚本执行慢点，或者说，“懒”点。于是我们想到了一个经典的 Hack： &lt;code class=&quot;highlighter-rouge&quot;&gt;setTimeout(callback, 0)&lt;/code&gt;。我们试着把 MMPWA 中的 DOM 操作（渲染 1000 个列表）放进 &lt;code class=&quot;highlighter-rouge&quot;&gt;setTimeout(callback, 0)&lt;/code&gt; 里……&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-eleme-pwa/nextTick-&amp;amp;-Load.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/cantphysics/nextTick-&amp;amp;-Load.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;当当！首次渲染瞬间就被提前了。如果你熟悉浏览器的&lt;strong&gt;事件循环模型（event loop）&lt;/strong&gt;的话，这招 Hack 其实是通过 setTimeout 的回调把 DOM 操作放到了事件循环的任务队列中以避免它在当前循环执行，这样浏览器就得以在主线程空闲时喘息一下（更新一下渲染）了。如果你想亲手试试 MMPWA 的话，你可以访问 &lt;a href=&quot;https://github.com/Huxpro/mmpwa&quot;&gt;github.com/Huxpro/mmpwa&lt;/a&gt; 或 &lt;a href=&quot;https://huangxuan.me/mmpwa&quot;&gt;huangxuan.me/mmpwa/&lt;/a&gt; 访问代码与 Demo。我把 UI 设计为了 A/B Test 的形式并改为渲染 5000 个列表项来让效果更夸张一些。&lt;/p&gt;
 
 &lt;p&gt;回到饿了么 PWA 上，我们同样试着把 &lt;code class=&quot;highlighter-rouge&quot;&gt;new Vue()&lt;/code&gt; 放到了 &lt;code class=&quot;highlighter-rouge&quot;&gt;setTimeout&lt;/code&gt; 中。果然，黑魔法再次显灵，骨架屏在每次跳转后都能立刻被渲染。这时的 Profile 看起来是这样的：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-eleme-pwa/msite-After-Optim.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/cantphysics/msite-After-Optim.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;现在，我们在 400ms 时触发首次渲染（骨架屏），在 600ms 时完成真实 UI 的渲染并达到页面的可交互。你可以拉上去详细对比下优化前后 profile 的区别。&lt;/p&gt;
 
@@ -160,11 +160,11 @@
 
 &lt;p&gt;最后，是优化后的 Lighthouse 跑分结果，同样可以看到明显的性能提升。需要说明的是，能影响 Lighthouse 跑分的因素有很多，所以我建议你以控制变量（跑分用的设备、跑分时的网络环境等）的方式来进行对照实验。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-eleme-pwa/Lighthouse-after.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/cantphysics/Lighthouse-after.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;最后附上一张图，这张图当时是做给 Addy Osmani 的 I/O 演讲用的，描述了饿了么 PWA 是如何结合 Vue 来实现多页应用的 PRPL 模式，可以作为一个架构的参考与示意图。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-eleme-pwa/Architecture.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/cantphysics/Architecture.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;一些感想&quot;&gt;一些感想&lt;/h2&gt;
 
@@ -196,7 +196,7 @@
   &lt;p&gt;Read at medium.com: &lt;a href=&quot;https://medium.com/elemefe/upgrading-ele-me-to-progressive-web-app-2a446832e509&quot;&gt;Upgrading Ele.me to Progressive Web Apps&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Since the very first experiments that &lt;a href=&quot;https://twitter.com/vuejs/status/834087199008239619&quot;&gt;@Vue.js tweeted&lt;/a&gt;, we at Ele.me (the biggest food ordering and delivering company in China) have been working on upgrading our mobile website to a &lt;a href=&quot;https://developers.google.com/web/progressive-web-apps/&quot;&gt;Progressive Web App&lt;/a&gt;. We’re proud to ship the world-first PWA exclusively for the Chinese market, but even prouder to collaborate with Google, UC and Tencent to push the boundary of web experience and browser supports in China.&lt;/p&gt;
+&lt;p&gt;Since the very first experiments that &lt;a href=&quot;https://twitter.com/vuejs/status/834087199008239619&quot;&gt;@Vue.js tweeted&lt;/a&gt;, we at Ele.me (the biggest food ordering and delivering company in China) have been working on upgrading our mobile website to a &lt;a href=&quot;https://developers.google.com/web/progressive-web-apps/&quot;&gt;Progressive Web App&lt;/a&gt;. We’re proud to ship the world-first PWA exclusively for the Chinese market, but even prouder to collaborate with Google, UC and Tencent to push the boundary of web experience and browser supports in China.&amp;gt;s&lt;/p&gt;
 
 &lt;h2 id=&quot;multi-page-vue-pwa&quot;&gt;Multi-page, Vue, PWA?&lt;/h2&gt;
 
@@ -218,7 +218,7 @@
 
 &lt;p&gt;Routes in MPAs naturally fetch code for that route only, and tend to have a flattening dependency graph. Most scripts depended by Ele.me are just &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt;&lt;/code&gt; elements, so they can be found and fetched by &lt;a href=&quot;https://calendar.perfplanet.com/2013/big-bad-preloader/&quot;&gt;good old browser preloader&lt;/a&gt; in early parsing phase without explicit &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;link rel=&quot;preload&quot;&amp;gt;&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-eleme-pwa/PUSH-link-rel-preload.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/cantphysics/PUSH-link-rel-preload.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;To take benefits from HTTP2 Multiplexing, we currently serve all critical resources under a single domain (no more domain sharding), and we are also experimenting on Server Push.&lt;/p&gt;
 
@@ -232,7 +232,7 @@
 
 &lt;p&gt;This’s the part &lt;a href=&quot;https://w3c.github.io/ServiceWorker/v1/&quot;&gt;Service Worker&lt;/a&gt; come to join the show. Service Worker is known as a client-side proxy enabling developers to intercept requests and serve responses from cache, but it can also perform initiative fetch to prefetch then precache future resources.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-eleme-pwa/PRECACHE-future-routes.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/cantphysics/PRECACHE-future-routes.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We already used &lt;a href=&quot;https://webpack.github.io/&quot;&gt;Webpack&lt;/a&gt; in the build process to do &lt;code class=&quot;highlighter-rouge&quot;&gt;.vue&lt;/code&gt; compilation and asset versioning, so we create a webpack plugin to help us collecting dependencies into a “precache manifest” and generating a new Service Worker file after each build. This is pretty much like &lt;a href=&quot;https://medium.com/@Huxpro/how-does-sw-precache-works-2d99c3d3c725&quot;&gt;how SW-Precache works&lt;/a&gt;.&lt;/p&gt;
 
@@ -250,7 +250,7 @@
 
 &lt;p&gt;So what about the end result?&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-eleme-pwa/Lighthouse-before.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/cantphysics/Lighthouse-before.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;In &lt;a href=&quot;https://developers.google.com/web/tools/lighthouse/&quot;&gt;Lighthouse&lt;/a&gt; simulation (3G &amp;amp; 5x Slower CPU), we made Time-To-Interactive around 2 seconds,&lt;/strong&gt; and this was benchmarked on our HTTP1 test server.&lt;/p&gt;
 
@@ -266,7 +266,7 @@
 
 &lt;p&gt;So here is the profile (2x slower CPU simulated) of our entry page (most heavy one). Even we can make Time-To-Interactive around 1s in repeat visit, our users can still feel too slow for just “switching a tab”.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-eleme-pwa/msite-Before-Optim.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/cantphysics/msite-Before-Optim.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;huge-javascript-re-startup-cost&quot;&gt;Huge JavaScript Re-Startup Cost&lt;/h3&gt;
 
@@ -318,7 +318,7 @@
 
 &lt;p&gt;&lt;strong&gt;Then I want to say: A script not blocking parser could still block painting nonetheless.&lt;/strong&gt; So here is a reduced test I wrote named &lt;strong&gt;“Minimal Multi-page PWA”&lt;/strong&gt;, or MMPWA, which basically render 1000 list items within an &lt;code class=&quot;highlighter-rouge&quot;&gt;async&lt;/code&gt; (and truly not parser-blocking) script to see if we can get Skeleton Screen painted before scripts get executed. The profile below (over USB debugging on my real Nexus 5) shows my ignorance:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-eleme-pwa/thisTick-&amp;amp;-Load.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/cantphysics/thisTick-&amp;amp;-Load.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Yes, keep your mouth open. The first paint is blocked. I was also surprised here. The reason I guess is that &lt;strong&gt;if we touch DOM so quickly that the browser has still NOT finished previous painting job, our dear browser has to abort every pixel it has drawn, and has to wait until current DOM manipulation task finished and redo the rendering pipeline again.&lt;/strong&gt; And this more often happens with a mobile device with a slower CPU/GPU.&lt;/p&gt;
 
@@ -326,7 +326,7 @@
 
 &lt;p&gt;We indeed encountered this problem when testing our new beautiful Skeleton Screen. Perhaps Vue finishes its job and start to mount nodes too fast ;). But anyway we have to make it slower, or rather lazier. So we try to put DOM manipulation things inside &lt;code class=&quot;highlighter-rouge&quot;&gt;setTimeout(callback, 0)&lt;/code&gt;, and it works like a charm!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-eleme-pwa/nextTick-&amp;amp;-Load.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/cantphysics/nextTick-&amp;amp;-Load.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I think you may curious about how this change performs in the wild, so I have refined MMPWA by rendering 5000 list items rather 1000 to make the differences more obvious, and by designing it in an A/B testing manner. The code is on &lt;a href=&quot;https://github.com/Huxpro/mmpwa&quot;&gt;Github&lt;/a&gt; and the demo is live on &lt;a href=&quot;https://huangxuan.me/mmpwa&quot;&gt;huangxuan.me/mmpwa/&lt;/a&gt;. Here is also a video for loungers.&lt;/p&gt;
 
@@ -336,7 +336,7 @@
 
 &lt;p&gt;So we applied what we learned from MMPWA by putting &lt;code class=&quot;highlighter-rouge&quot;&gt;new Vue()&lt;/code&gt; inside &lt;code class=&quot;highlighter-rouge&quot;&gt;setTimeout&lt;/code&gt; and BOOM! We have Skeleton Screen painted consistently after every navigating! Here is the profile after all these optimizations.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-eleme-pwa/msite-After-Optim.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/cantphysics/msite-After-Optim.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Huge improvements right?  This time we hit First Paint (Skeleton Screen Paint) at 400ms and TTI at 600ms. You should really go back to have a before-after comparison in details.&lt;/p&gt;
 
@@ -348,7 +348,7 @@
 
 &lt;p&gt;Similar improvements can be seen from Lighthouse (Under same server and network environment). A Pro Tip is you should always use lighthouse in a variable controlling approach.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-eleme-pwa/Lighthouse-after.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/cantphysics/Lighthouse-after.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;performance-in-the-real-world&quot;&gt;Performance In the Real World&lt;/h3&gt;
 
@@ -401,26 +401,26 @@
 
 &lt;h2 id=&quot;appendix-architecture-diagram&quot;&gt;Appendix. Architecture Diagram&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-eleme-pwa/Architecture.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/cantphysics/Architecture.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 
 &lt;/div&gt;
 </description>
-        <pubDate>Wed, 12 Jul 2017 08:00:00 -0400</pubDate>
-        <link>http://localhost:4000/2017/07/12/upgrading-eleme-to-pwa/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/07/12/upgrading-eleme-to-pwa/</guid>
+        <pubDate>Fri, 24 Aug 2018 08:00:00 -0400</pubDate>
+        <link>http://localhost:4000/2018/08/24/upgrading-eleme-to-pwa/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/08/24/upgrading-eleme-to-pwa/</guid>
         
-        <category>前端开发</category>
+        <category>Nankai University</category>
         
-        <category>JavaScript</category>
+        <category>南开大学</category>
         
-        <category>PWA</category>
+        <category>物理</category>
         
         
       </item>
     
       <item>
-        <title>他是狗，你们便是苟奴隶</title>
+        <title>物理想不明白 </title>
         <description>&lt;blockquote&gt;
   &lt;p&gt;在知乎被删帖，我理解知乎。&lt;br /&gt;
 你说你们做不了什么，我也理解你们。&lt;br /&gt;
@@ -483,9 +483,15 @@ Today, we celebrate our Independence Day!&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;国乒，愿有属于你们的独立日。&lt;/strong&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sat, 24 Jun 2017 08:00:00 -0400</pubDate>
-        <link>http://localhost:4000/2017/06/24/you-are-slaves/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/06/24/you-are-slaves/</guid>
+        <pubDate>Fri, 24 Aug 2018 08:00:00 -0400</pubDate>
+        <link>http://localhost:4000/2018/08/24/you-are-slaves-%E4%B8%8A%E5%8D%882.43.09/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/08/24/you-are-slaves-%E4%B8%8A%E5%8D%882.43.09/</guid>
+        
+        <category>Nankai University</category>
+        
+        <category>南开大学</category>
+        
+        <category>物理</category>
         
         
       </item>
@@ -832,8 +838,8 @@ main.js
 
 </description>
         <pubDate>Thu, 09 Feb 2017 07:00:00 -0500</pubDate>
-        <link>http://localhost:4000/2017/02/09/nextgen-web-pwa/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/02/09/nextgen-web-pwa/</guid>
+        <link>http://localhost:4000/2017/02/09/nextgen-web-pwa-%E4%B8%8A%E5%8D%882.43.09/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/02/09/nextgen-web-pwa-%E4%B8%8A%E5%8D%882.43.09/</guid>
         
         <category>前端开发</category>
         
@@ -880,8 +886,8 @@ main.js
 
 </description>
         <pubDate>Sun, 20 Nov 2016 00:00:00 -0500</pubDate>
-        <link>http://localhost:4000/2016/11/20/sw-101-gdgdf/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/11/20/sw-101-gdgdf/</guid>
+        <link>http://localhost:4000/2016/11/20/sw-101-gdgdf-%E4%B8%8A%E5%8D%882.43.09/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/11/20/sw-101-gdgdf-%E4%B8%8A%E5%8D%882.43.09/</guid>
         
         <category>前端开发</category>
         
@@ -968,8 +974,8 @@ main.js
 
 </description>
         <pubDate>Thu, 20 Oct 2016 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000/2016/10/20/pwa-qcon2016/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/20/pwa-qcon2016/</guid>
+        <link>http://localhost:4000/2016/10/20/pwa-qcon2016-%E4%B8%8A%E5%8D%882.43.09/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/10/20/pwa-qcon2016-%E4%B8%8A%E5%8D%882.43.09/</guid>
         
         <category>前端开发</category>
         
@@ -1017,258 +1023,14 @@ main.js
 &lt;h3 id=&quot;power-by-yanshuoio演说io&quot;&gt;Power by &lt;a href=&quot;https://yanshuo.io&quot;&gt;Yanshuo.io（演说.io）&lt;/a&gt;&lt;/h3&gt;
 </description>
         <pubDate>Sun, 05 Jun 2016 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000/2016/06/05/pwa-in-my-pov/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/06/05/pwa-in-my-pov/</guid>
+        <link>http://localhost:4000/2016/06/05/pwa-in-my-pov-%E4%B8%8A%E5%8D%882.43.09/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/06/05/pwa-in-my-pov-%E4%B8%8A%E5%8D%882.43.09/</guid>
         
         <category>前端开发</category>
         
         <category>JavaScript</category>
         
         <category>PWA</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>React vs Angular 2：冰与火之歌「译」</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;这篇文章转载自&lt;a href=&quot;http://zhuanlan.zhihu.com/FrontendMagazine/20549104&quot;&gt;我在知乎专栏「前端外刊评论」上发表的文章&lt;/a&gt;。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://angular.io/&quot;&gt;Angular 2&lt;/a&gt; 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热门框架。是时候进行一场巅峰对决了，我们来看看它如何与 &lt;a href=&quot;https://facebook.github.io/react/&quot;&gt;React&lt;/a&gt; 这个 2015 年的新宠抗衡。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;免责声明：&lt;/strong&gt;我之前很喜欢使用 Angular 1，不过在 2015 年转到了 React。最近我也在 Pluralsight 上发布了一门关于 &lt;a href=&quot;https://www.pluralsight.com/courses/react-flux-building-applications&quot;&gt;React 和 Flux 的课程&lt;/a&gt;（&lt;a href=&quot;http://app.pluralsight.com/signup&quot;&gt;免费试学&lt;/a&gt;）。所以，&lt;strong&gt;是的，我本人是有偏见的，但我不会偏袒任何一方。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;好了，我们开始吧，这场对决将会非常血腥。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/800/1*MRPl_SNuRGJchb6eOAnkSA.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;图片来源：&lt;a href=&quot;https://twitter.com/jwcarroll&quot;&gt;@jwcarrol&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;两者根本不具有可比性&quot;&gt;两者根本不具有可比性！&lt;/h2&gt;
-
-&lt;p&gt;是的是的，Angular 是框架，React 是类库。所以有人觉得比较这两者没有逻辑性可言。大错特错！&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;选择 Angular 还是 React 就像选择直接购买成品电脑还是买零件自己组装一样。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;两者的优缺点本文都会提及，我会拿 React 语法和组件模型跟 Angular 的语法和组件模型做对比。这就像是拿成品电脑的 CPU 跟零售的 CPU 做对比，没有任何不妥。&lt;/p&gt;
-
-&lt;h2 id=&quot;angular-2-的优点&quot;&gt;Angular 2 的优点&lt;/h2&gt;
-
-&lt;p&gt;我们先看 Angular 相对 React 有哪些优势。&lt;/p&gt;
-
-&lt;h4 id=&quot;无选择性疲劳&quot;&gt;&lt;strong&gt;无选择性疲劳&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;p&gt;Angular 是一个完整的框架，本身就提供了比 React 多得多的建议和功能。而要用 React，开发者通常还需要借助别的类库来打造一个真正的应用。比如你可能需要额外的库来处理路由、强制单向数据流、进行 API 调用、做测试以及管理依赖等等。要做的选择和决定太多了，让人很有压力。这也是为什么 React 有那么多的入门套件的原因（我自己就写了两个：&lt;a href=&quot;https://github.com/coryhouse/react-flux-starter-kit&quot;&gt;1&lt;/a&gt;、&lt;a href=&quot;https://github.com/coryhouse/react-slingshot&quot;&gt;2&lt;/a&gt;）。&lt;/p&gt;
-
-&lt;p&gt;Angular 自带了不少主张，所以能够帮助你更快开始，不至于因为要做很多决定而无所适从。这种强制的一致性也能帮助新人更快适应其开发模式，并使得开发者在不同团队间切换更具可行性。&lt;/p&gt;
-
-&lt;p&gt;Angular 核心团队让我非常欣赏的一点是，他们拥抱了 TypeScript，这就造成了另一个优势。&lt;/p&gt;
-
-&lt;h4 id=&quot;typescript--阳关大道&quot;&gt;TypeScript = 阳关大道&lt;/h4&gt;
-
-&lt;p&gt;没错，并非所有人都喜欢 TypeScript，但是 Angular 2 毅然决然地选择了它确实是个巨大的优势。反观 React，网上的各种示例应用令人沮丧地不一致——ES5 和 ES6 的项目基本上各占一半，而且目前存在&lt;a href=&quot;http://jamesknelson.com/should-i-use-react-createclass-es6-classes-or-stateless-functional-components/&quot;&gt;三种不同的组件声明方式&lt;/a&gt;。这无疑给初学者造成了困惑。（Angular 还拥抱了装饰器（decorator）而不是继承（extends）——很多人认为这也是个加分项）。&lt;/p&gt;
-
-&lt;p&gt;尽管 Angular 2 并不强制使用 TypeScript，但显然的是，Angular 的核心团队默认在文档中使用 TypeScript。这意味着相关的示例应用和开源项目更有可能保持一致性。Angular 已经提供了&lt;a href=&quot;https://angular.io/docs/ts/latest/quickstart.html&quot;&gt;非常清晰的关于如何使用 TypeScript 编译器的例子&lt;/a&gt;。（诚然，目前&lt;a href=&quot;http://angularjs.blogspot.com/2015/09/angular-2-survey-results.html&quot;&gt;并非所有人都在拥抱 TypeScript&lt;/a&gt;，但我有理由相信等到正式发布之后，TypeScript 会成为事实上的标准）。这种一致性应该会帮助初学者避免在学习 React 时遇到的疑惑和选择困难。&lt;/p&gt;
-
-&lt;h4 id=&quot;极少的代码变动&quot;&gt;极少的代码变动&lt;/h4&gt;
-
-&lt;p&gt;2015 年是 &lt;a href=&quot;https://medium.com/@ericclemmons/javascript-fatigue-48d4011b6fc4#.559iqxb39&quot;&gt;JavaScript 疲劳&lt;/a&gt;元年，React 可以说是罪魁祸首。而且 React 尚未发布 1.0，所以未来还可能有很多变数。React 生态圈依旧在快速地变动着，尤其是&lt;a href=&quot;https://github.com/kriasoft/react-starter-kit/issues/22&quot;&gt;各种 Flux 变种&lt;/a&gt;和&lt;a href=&quot;https://github.com/rackt/react-router&quot;&gt;路由&lt;/a&gt;。也就是说，你今天用 React 写的所有东西，都有可能在 React 1.0 正式发布后过时，或者必须进行大量的改动。&lt;/p&gt;
-
-&lt;p&gt;相反，Angular 2 是一个对已经成熟完整框架（Angular 1）的重新发明，而且经过仔细、系统的设计。所以 Angular 不大可能在正式发布后要求已有项目进行痛苦的代码变动。Angular 作为一个完整的框架，你在选择它的时候，也会信任其开发团队，相信他们会认真决定框架的未来。而使用 React，一切都需要你自己负责，你要自己整合一大堆开源类库来打造一个完整的应用，类库之间互不相干且变动频繁。这是一个令人沮丧的耗时工作，而且永远没有尽头。&lt;/p&gt;
-
-&lt;h4 id=&quot;广泛的工具支持&quot;&gt;&lt;strong&gt;广泛的工具支持&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;p&gt;后面我会说，我认为 React 的 JSX 是非常耀眼的亮点。然而要使用 JSX，你需要选择支持它的工具。尽管 React 已经足够流行，工具支持不再是什么问题，但诸如 IDE 和 lint 工具等新工具还不大可能很快得到支持。Angular 2 的模版是保存在一个字符串或独立的 HTML 文件中的，所以不要求特殊的工具支持（不过似乎 Angular 字符串模版的智能解析工具已经呼之欲出了）。&lt;/p&gt;
-
-&lt;h4 id=&quot;web-components-友好&quot;&gt;Web Components 友好&lt;/h4&gt;
-
-&lt;p&gt;Angular 2 还拥抱了 Web Component 标准。唉，真尴尬我居然一开始忘记提到这点了——最近我还发布了一门关于&lt;a href=&quot;https://www.pluralsight.com/courses/web-components-shadow-dom&quot;&gt;Web Components 课程&lt;/a&gt;呢！简单来说，把 Angular 2 组件转换成原生 Web Components 应该会比 React 组件容易得多。固然 Web Components 的&lt;a href=&quot;http://jonrimmer.github.io/are-we-componentized-yet/&quot;&gt;浏览器支持度依然很弱&lt;/a&gt;，但长期来看，对 Web Components 友好是很大的优势。&lt;/p&gt;
-
-&lt;p&gt;Angular 的实现有其自身的局限和陷阱，这正好让我过渡到对 React 优势的讨论。&lt;/p&gt;
-
-&lt;h3 id=&quot;react-的优点&quot;&gt;React 的优点&lt;/h3&gt;
-
-&lt;p&gt;现在，让我们看看是什么让 React 如此与众不同。&lt;/p&gt;
-
-&lt;h4 id=&quot;jsx&quot;&gt;&lt;strong&gt;JSX&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;p&gt;JSX 是一种类似 HTML 的语法，但它实际上会被编译成 JavaScript。将标签与代码混写在同一个文件中意味着输入一个组件的函数或者变量时你将享受到自动补全的福利。而 Angular 基于字符串的模版就相形见绌了：很多编辑器都不会高亮它们（只会显示单色）、只有有限的代码补全支持，并且一直到运行时才会报错。并且，通常你也只能得到很有限的错误提示。不过，Angular 的团队&lt;a href=&quot;https://github.com/angular/angular/issues/4417&quot;&gt;造了一个自己的 HTML 解析器来解决这个问题&lt;/a&gt;。（叼叼叼！）&lt;/p&gt;
-
-&lt;p&gt;如果你不喜欢 Angular 的字符串模版，你可以把模版移到一个单独的文件里去。不过这样你就回到了我认为的“老样子”：你需要在自己脑袋里记住这两个文件的关联，不但没有代码自动补全，也没有任何编译时检查来协助你。这听起来可能并不算什么……除非你已经爱上了与 React 相伴的日子。在同一个文件中组合组件还能享受编译时的检查，大概是 JSX 最与众不同的地方之一了。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://p5.qhimg.com/d/inn/8a99f370/2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;对比 Angular 2 与 React 在标签忘记闭合时是如何表现的。&lt;/p&gt;
-
-&lt;p&gt;关于为什么 JSX 是一个巨大的优势，可以看看 &lt;a href=&quot;https://medium.com/@housecor/react-s-jsx-the-other-side-of-the-coin-2ace7ab62b98#.5007n49wq&quot;&gt;JSX：硬币的另一面（JSX: The Other Side of the Coin）&lt;/a&gt;. （P.S. 这是作者写的另一篇文章，如果大家希望我们可以把这篇也翻了，欢迎在评论区举手）&lt;/p&gt;
-
-&lt;h4 id=&quot;react-报错清晰快速&quot;&gt;React 报错清晰快速&lt;/h4&gt;
-
-&lt;p&gt;当你在 React 的 JSX 中不小心手抖打错时，它并不会被编译。这是一件非常美妙的事情：无论你是忘记闭合了标签还是引用了一个不存在的属性（property），你都可以立刻知道到底是哪一行出错了。&lt;strong&gt;JSX 编译器会指出你手抖的具体行号&lt;/strong&gt;，彻彻底底加速你的开发。&lt;/p&gt;
-
-&lt;p&gt;相反，当你在 Angular 2 中不小心敲错了一个变量时，鸦雀无声。&lt;strong&gt;Angular 2 并不会在编译时做什么，它会等到运行时才静默报错。&lt;/strong&gt;它报错得&lt;em&gt;如此之慢&lt;/em&gt;，我加载完整个应用然后奇怪为什么我的数据没有显示出来呢？这太不爽了。&lt;/p&gt;
-
-&lt;h4 id=&quot;react-以-javascript-为中心&quot;&gt;React 以 JavaScript 为中心&lt;/h4&gt;
-
-&lt;p&gt;终于来了。这才是 React 和 Angular 的根本区别。&lt;strong&gt;很不幸，Angular 2 仍然是以 HTML 而非 JavaScript 为中心的。&lt;/strong&gt;Angular 2 并没有解决它设计上的根本问题：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Angular 2 继续把 “JS” 放到 HTML 里。React 则把 “HTML” 放到 JS 里。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;这种分歧带来的影响真是再怎么强调也不为过。它们从根本上影响着开发体验。Angular 以 HTML 为中心的设计留下了巨大的缺陷。正如我在 &lt;a href=&quot;https://medium.com/@housecor/react-s-jsx-the-other-side-of-the-coin-2ace7ab62b98#.jqh5kkxlk&quot;&gt;JSX：硬币的另一面&lt;/a&gt; 中所说的，JavaScript 远比 HTML 要强大。因此，&lt;strong&gt;增强 JavaScript 让其支持标签要比增强 HTML 让其支持逻辑要合理得多&lt;/strong&gt;。无论如何，HTML 与 JavaScript 都需要某种方式以粘合在一起。React 以 JavaScript 为中心的思路从根本上优于 Angular、Ember、Knockout 这些以 HTML 为中心的思路。&lt;/p&gt;
-
-&lt;p&gt;让我们来看看为什么。&lt;/p&gt;
-
-&lt;h4 id=&quot;react-以-javascript-为中心的设计--简约&quot;&gt;React 以 JavaScript 为中心的设计 = 简约&lt;/h4&gt;
-
-&lt;p&gt;Angular 2 延续了 Angular 1 试图让 HTML 更加强大的老路子。所以即使是像循环或者条件判断这样的简单任务你也不得不使用 Angular 2 的独特语法来完成。例如，Angular 2 通过两种语法同时提供了单向数据绑定与双向数据绑定，可不幸的是它们实在差得有点多：&lt;/p&gt;
-
-&lt;div class=&quot;language-hbs highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;{{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;myVar&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}}&lt;/span&gt;        //单向数据绑定
-ngModel=&quot;myVar&quot;  //双向数据绑定
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;在 React 中，数据绑定语法不取决于数据流的单双向（数据绑定的单双向是在其他地方处理的，不得不说我觉得理应如此）。不管是单向还是双向数据流，绑定语法都是这样的：&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myVar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Angular 2 的内联母版（inline master templates）使用了这样的语法：&lt;/p&gt;
-
-&lt;div class=&quot;language-hbs highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ngFor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#hero of heroes&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;{{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;hero&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}}&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;上面这个代码片段遍历了一组 hero，而我比较关心的几点是：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;通过星号来声明一个“母版”实在是太晦涩了&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;hero&lt;/code&gt; 前的英镑符号（&lt;code class=&quot;highlighter-rouge&quot;&gt;#&lt;/code&gt;）用于声明一个局部模版变量。这个概念感觉非常鸡肋（如果你偏好不使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;#&lt;/code&gt;，你也可以使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;var-&lt;/code&gt; 前缀写法）&lt;/li&gt;
-  &lt;li&gt;为 HTML 加入了循环语义的HTML 特性（attribute）&lt;code class=&quot;highlighter-rouge&quot;&gt;ngFor&lt;/code&gt; 是 Angular 特有的东西&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;相比上面 Angular 2 的语法，React 的语法可是纯净的 JavaScript （不过我得承认下面的属性 &lt;code class=&quot;highlighter-rouge&quot;&gt;key&lt;/code&gt; 是个 React 的私货）&lt;/p&gt;
-
-&lt;div class=&quot;language-hbs highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
-  { heroes.map(hero =&amp;gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;{hero.id}&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{hero.name}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-  )}
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;鉴于 JS 原生支持循环，React JSX 利用 JS 的力量来做到这类事情简直易如反掌，配合 &lt;code class=&quot;highlighter-rouge&quot;&gt;map&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;filter&lt;/code&gt; 能做的还远不止此。&lt;/p&gt;
-
-&lt;p&gt;去看看 &lt;a href=&quot;https://angular.io/docs/ts/latest/guide/cheatsheet.html&quot;&gt;Angular 2 速查表&lt;/a&gt;？那不是 HTML，也不是 JavaScript……这叫 &lt;strong&gt;Angular&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;读懂 Angular：&lt;/strong&gt; 学一大堆 Angular 特有的语法&lt;/p&gt;
-
-  &lt;p&gt;读懂 React： 学 JavaScript&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;React 因为语法和概念的简约而与众不同。我们不妨品味下当今流行的 JS 框架/库都是如何实现遍历的：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Ember     : 
-Angular 1 : ng-repeat
-Angular 2 : ngFor
-Knockout  : data-bind=&quot;foreach&quot;
-React     : 直接用 JS 就好啦 :)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;除了 React，所有其它框架都用自己的专有语法重新发明了一个我们在 JavaScript 常见得不能再常见的东西：&lt;strong&gt;循环&lt;/strong&gt;。这大概就是 React 的美妙之处，利用 JavaScript 的力量来处理标签，而不是什么奇怪的新语法。&lt;/p&gt;
-
-&lt;p&gt;Angular 2 中的奇怪语法还有点击事件的绑定：&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;onSelect(hero)&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;相反，React 再一次使用了普通的 JavaScript：&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onSelect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hero&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;并且，鉴于 React 内建了一个模拟的事件机制（Angular 2 也有），你并不需要去担心使用内联语法声明事件处理器所暗含的性能问题。&lt;/p&gt;
-
-&lt;p&gt;为什么要强迫自己满脑子都是一个框架的特殊语法呢？为什么不直接拥抱 JS 的力量？&lt;/p&gt;
-
-&lt;h4 id=&quot;奢华的开发体验&quot;&gt;奢华的开发体验&lt;/h4&gt;
-
-&lt;p&gt;JSX 具备的代码自动补全、编译时检查与丰富的错误提示已经创造了非常棒的开发体验，既为我们减少了输入，与节约了时间。而配合上热替换（hot reloading）与时间旅行（time travel），你将获得前所未有的开发体验，效率高到飞起。&lt;/p&gt;
-
-&lt;p&gt;原文这里链了个 Youtube 上的视频：&lt;a href=&quot;https://www.youtube.com/watch?v=xsSnOQynTHs&amp;amp;feature=youtu.be&quot;&gt;Dan Abramov - Live React: Hot Reloading with Time Travel at react-europe 2015&lt;/a&gt;，大家自备梯子。&lt;/p&gt;
-
-&lt;h4 id=&quot;担心框架的大小&quot;&gt;担心框架的大小？&lt;/h4&gt;
-
-&lt;p&gt;这里是一些常见框架/库压缩后的大小（&lt;a href=&quot;https://gist.github.com/Restuta/cda69e50a853aa64912d&quot;&gt;来源&lt;/a&gt;）：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Angular 2:&lt;/strong&gt; 566k (766k with RxJS)&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Ember:&lt;/strong&gt; 435k&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js&quot;&gt;&lt;strong&gt;Angular 1&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;:&lt;/strong&gt; 143k&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;React + Redux:&lt;/strong&gt; 139k&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;列出的都是框架级的、用于浏览器且压缩后的大小（但并未 gzip）。需要补充的是，Angular 2 的尺寸在最终版本发布时应该会有所减小。&lt;/p&gt;
-
-&lt;p&gt;为了做一个更真实的对比，我将 Angular 2 &lt;a href=&quot;https://angular.io/docs/ts/latest/tutorial/&quot;&gt;官方教程&lt;/a&gt;中的 Tour of Heroes 应用用 Angular 2 和 React（还用上了新的 &lt;a href=&quot;https://github.com/coryhouse/react-slingshot&quot;&gt;React Slingshot&lt;/a&gt; 入门套件）都实现了一遍，结果如何呢？&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/coryhouse/angular-2-tour-of-heroes/tree/master&quot;&gt;&lt;strong&gt;Angular 2&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;:&lt;/strong&gt; 764k 压缩后&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/coryhouse/react-tour-of-heroes&quot;&gt;&lt;strong&gt;React + Redux&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;:&lt;/strong&gt; 151k 压缩后&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;可以看到，&lt;strong&gt;做一个差不多的东西，Angular 2 目前的尺寸是 React + Redux 的五倍还多&lt;/strong&gt;。重要的事情再说一遍，Angular 2 的最终版本应该会减重。&lt;/p&gt;
-
-&lt;p&gt;不过，我承认关于框架大小的担忧可能被夸大了：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;大型应用往往至少有几百 KB 的代码，经常还更多，不管它们是不是使用了框架。开发者需要做很多的抽象来构建一个复杂的软件。无论这些抽象是来自框架的还是自己手写的，它都会对应用的加载性能造成负面影响。&lt;/p&gt;
-
-  &lt;p&gt;就算你完全杜绝框架的使用，许多应用仍然是几百 KB 的 JavaScript 在那。 — Tom Dale &lt;a href=&quot;http://tomdale.net/2015/11/javascript-frameworks-and-mobile-performance/&quot;&gt;JavaScript Frameworks and Mobile Performance&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Tom 的观点是对的。像 Angular、Ember 这样的框架之所以更大是因为它们自带了更多的功能。&lt;/p&gt;
-
-&lt;p&gt;但是，我关心的点在于：很多应用其实用不到这种大型框架提供的所有功能。在这个越来越拥抱微服务、微应用、&lt;a href=&quot;http://www.npmjs.com&quot;&gt;单一职责模块（single-responsibility packages）&lt;/a&gt;的时代，&lt;strong&gt;React 通过让你自己挑选必要模块，让你的应用大小真正做到量身定做&lt;/strong&gt;。在这个有着 200,000 个 npm 模块的世界里，这点非常强大。&lt;/p&gt;
-
-&lt;h4 id=&quot;react-信奉unix-哲学&quot;&gt;React 信奉&lt;a href=&quot;https://en.wikipedia.org/wiki/Unix_philosophy&quot;&gt;Unix 哲学&lt;/a&gt;.&lt;/h4&gt;
-
-&lt;p&gt;React 是一个类库。它的哲学与 Angular、Ember 这些大而全的框架恰恰相反。你可以根据场景挑选各种时髦的类库，搭配出你的最佳组合。JavaScript 世界在飞速发展，React 允许你不断用更好的类库去迭代你应用中的每个小部分，而不是傻等着你选择的框架自己升级。&lt;/p&gt;
-
-&lt;p&gt;Unix 久经沙场屹立不倒，原因就是：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;小而美、可组合、目的单一，这种哲学永远不会过时。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;React 作为一个专注、可组合并且目的单一的工具，已经被&lt;a href=&quot;https://github.com/facebook/react/wiki/Sites-Using-React&quot;&gt;全世界的各大网站们&lt;/a&gt;使用，预示着它的前途光明（当然，Angular 也被用于&lt;a href=&quot;https://www.madewithangular.com/#/&quot;&gt;许多大牌网站&lt;/a&gt;）。&lt;/p&gt;
-
-&lt;h4 id=&quot;谢幕之战&quot;&gt;谢幕之战&lt;/h4&gt;
-
-&lt;p&gt;Angular 2 相比第一代有着长足的进步。新的组件模型比第一代的指令（directives）易学许多；新增了对于同构／服务器端渲染的支持；使用虚拟 DOM 提供了 3-10 倍的性能提升。这些改进使得 Angular 2 与 React 旗鼓相当。不可否认，它功能齐全、观点鲜明，能够显著减少 “JavaScript 疲劳” 。&lt;/p&gt;
-
-&lt;p&gt;不过，Angular 2 的大小和语法都让我望而却步。Angular 致力的 HTML 中心设计比 React 的 JavaScript 中心模型要复杂太多。在 React 中，你并不需要学习 &lt;code class=&quot;highlighter-rouge&quot;&gt;ng-什么什么&lt;/code&gt; 这种框架特有的 HTML 补丁（shim），你只要写 JavaScript 就好了。这才是我相信的未来。&lt;/p&gt;
-
-&lt;h3 id=&quot;著作权声明&quot;&gt;著作权声明&lt;/h3&gt;
-
-&lt;p&gt;本文译自 &lt;a href=&quot;https://medium.freecodecamp.com/angular-2-versus-react-there-will-be-blood-66595faafd51#.v4y4euy1r&quot;&gt;Angular 2 versus React: There Will Be Blood&lt;/a&gt;，其实&lt;a href=&quot;http://www.w3ctech.com/topic/1675?from=timeline&amp;amp;isappinstalled=0&quot;&gt;之前有人翻译过&lt;/a&gt;，但是翻得水平有一点不忍直视，我们不希望浪费这篇好文章。&lt;br /&gt;
-本文由 &lt;a href=&quot;https://www.zhihu.com/people/li-ling-hao&quot;&gt;@李凌豪&lt;/a&gt; &lt;a href=&quot;https://www.zhihu.com/people/huxpro&quot;&gt;@黄玄&lt;/a&gt; 联合翻译，首次发布于&lt;a href=&quot;http://zhuanlan.zhihu.com/FrontendMagazine&quot;&gt;前端外刊评论 · 知乎专栏&lt;/a&gt;，转载请保留原文链接 ;)&lt;/p&gt;
-</description>
-        <pubDate>Mon, 01 Feb 2016 07:00:00 -0500</pubDate>
-        <link>http://localhost:4000/2016/02/01/React-vs-Angular2/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/02/01/React-vs-Angular2/</guid>
-        
-        <category>前端开发</category>
-        
-        <category>JavaScript</category>
-        
-        <category>译文</category>
         
         
       </item>
@@ -1402,8 +1164,8 @@ React     : 直接用 JS 就好啦 :)
 &lt;p&gt;&lt;a href=&quot;http://lab.hakim.se/reveal-js&quot;&gt;Reveal.js&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 28 Dec 2015 00:00:00 -0500</pubDate>
-        <link>http://localhost:4000/2015/12/28/css-sucks-2015/</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/12/28/css-sucks-2015/</guid>
+        <link>http://localhost:4000/2015/12/28/css-sucks-2015-%E4%B8%8A%E5%8D%882.43.09/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/12/28/css-sucks-2015-%E4%B8%8A%E5%8D%882.43.09/</guid>
         
         <category>前端开发</category>
         
@@ -1744,8 +1506,8 @@ React     : 直接用 JS 就好啦 :)
 译者 &lt;a href=&quot;http://weibo.com/huxpro&quot;&gt;黄玄&lt;/a&gt;，首次发布于 &lt;a href=&quot;http://huangxuan.me&quot;&gt;Hux Blog&lt;/a&gt;，转载请保留以上链接&lt;/p&gt;
 </description>
         <pubDate>Tue, 15 Dec 2015 00:00:00 -0500</pubDate>
-        <link>http://localhost:4000/2015/12/15/ios9-safari-web/</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/12/15/ios9-safari-web/</guid>
+        <link>http://localhost:4000/2015/12/15/ios9-safari-web-%E4%B8%8A%E5%8D%882.43.09/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/12/15/ios9-safari-web-%E4%B8%8A%E5%8D%882.43.09/</guid>
         
         <category>前端开发</category>
         
@@ -1935,14 +1697,91 @@ React     : 直接用 JS 就好啦 :)
 
 </description>
         <pubDate>Wed, 28 Oct 2015 08:00:00 -0400</pubDate>
-        <link>http://localhost:4000/2015/10/28/how-designer-learn-fe/</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/10/28/how-designer-learn-fe/</guid>
+        <link>http://localhost:4000/2015/10/28/how-designer-learn-fe-%E4%B8%8A%E5%8D%882.43.09/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/10/28/how-designer-learn-fe-%E4%B8%8A%E5%8D%882.43.09/</guid>
         
         <category>知乎</category>
         
         <category>前端开发</category>
         
         <category>UX Design</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>ES5, ES6, ES2016, ES.Next: JavaScript 的版本是怎么回事？「译」</title>
+        <description>&lt;p&gt;JavaScript 有着很奇怪的命名史。&lt;/p&gt;
+
+&lt;p&gt;1995 年，它作为网景浏览器（Netscape Navigator）的一部分首次发布，网景给这个新语言命名为 LiveScript。一年后，为了搭上当时媒体热炒 Java 的顺风车，临时改名为了 JavaScript &lt;em&gt;（当然，Java 和 JavaScript 的关系，就和雷锋和雷锋塔一样 —— 并没有什么关系）&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/in-post/post-js-version/javascript-java.jpg&quot; alt=&quot;java-javascript&quot; /&gt;
+&lt;small class=&quot;img-hint&quot;&gt;歪果仁的笑话怎么一点都不好笑&lt;/small&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;译者注：&lt;a href=&quot;https://en.wikipedia.org/wiki/JavaScript#History&quot;&gt;wikipedia 的 JavaScript 词条&lt;/a&gt; 更详细的叙述了这段历史&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;1996 年，网景将 JavaScript 提交给 &lt;a href=&quot;http://www.ecma-international.org/&quot;&gt;ECMA International（欧洲计算机制造商协会）&lt;/a&gt; 进行标准化，并最终确定出新的语言标准，它就是 ECMAScript。自此，ECMAScript 成为所有 JavaScript 实现的基础，不过，由于 JavaScript 名字的历史原因和市场原因（很显然 ECMAScript 这个名字并不令人喜欢……），现实中我们只用 ECMAScript 称呼标准，平时都还是使用 JavaScript 来称呼这个语言。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;术语（译者注）：&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;&lt;em&gt;标准（Standard）&lt;/em&gt;： 用于定义与其他事物区别的一套规则&lt;/li&gt;
+    &lt;li&gt;&lt;em&gt;实现（Implementation）&lt;/em&gt;： 某个标准的具体实施/真实实践&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;不过，JavaScript 开发者们并不怎么在乎这些，因为在诞生之后的 15 年里，ECMAScript 并没有多少变化，而且现实中的很多实现都已经和标准大相径庭。其实在第一版的 ECMAScript 发布后，很快又跟进发布了两个版本，但是自从 1999 年 ECMAScript 3 发布后，十年内都没有任何改动被成功添加到官方规范里。取而代之的，是各大浏览器厂商们争先进行自己的语言拓展，web 开发者们别无选择只能去尝试并且支持这些 API。即使是在 2009 年 ECMAScript 5 发布之后，仍然用了数年这些新规范才得到了浏览器的广泛支持，可是大部分开发者还是写着 ECMAScript 3 风格的代码，并不觉得有必要去了解这些规范。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;译者注：&lt;a href=&quot;https://en.wikipedia.org/wiki/ECMAScript#4th_Edition_.28abandoned.29&quot;&gt;ECMAScript 第四版草案&lt;/a&gt;由于太过激进而被抛弃，Adobe 的 &lt;a href=&quot;https://en.wikipedia.org/wiki/ActionScript&quot;&gt;ActionScript 3.0&lt;/a&gt; 是 ECMAScript edition 4 的唯一实现（ Flash 差点就统一 Web 了）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;到了 2012 年，事情突然开始有了转变。大家开始推动停止对旧版本 IE 浏览器的支持，用 ECMAScript 5 (ES5) 风格来编写代码也变得更加可行。与此同时，一个新的 ECMAScript 规范也开始启动。到了这时，大家开始逐渐习惯以对 ECMAScript 规范的版本支持程度来形容各种 JavaScript 实现。在正式被指名为 ECMAScript 第 6 版 (ES6) 之前，这个新的标准原本被称为 ES.Harmony（和谐）。2015 年，负责制定 ECMAScript 规范草案的委员会 TC39 决定将定义新标准的制度改为一年一次，这意味着每个新特性一旦被批准就可以添加，而不像以往一样，规范只有在整个草案完成，所有特性都没问题后才能被定稿。因此，ECMAScript 第 6 版在六月份公布之前，又被重命名为了 ECMAScript 2015（ES2015）&lt;/p&gt;
+
+&lt;p&gt;目前，仍然有很多新的 JavaScript 特性或语法正在提议中，包括 &lt;a href=&quot;https://github.com/wycats/javascript-decorators&quot;&gt;decorators（装饰者）&lt;/a&gt;，&lt;a href=&quot;https://github.com/lukehoban/ecmascript-asyncawait&quot;&gt;async-await（async-await 异步编程模型）&lt;/a&gt; 和 &lt;a href=&quot;https://github.com/jeffmo/es-class-properties&quot;&gt;static class properties（静态类属性）&lt;/a&gt;。它们通常被称为 ES7，ES2016 或者 ES.Next 的特性，不过实际上它们只能被称作提案或者说可能性，毕竟 ES2016 的规范还没有完成，有可能全部都会引入，也有可能一个都没有。TC39 把一个提案分为 4 个阶段，你可以在 &lt;a href=&quot;https://babeljs.io/docs/usage/experimental/&quot;&gt;Babel 的官网&lt;/a&gt; 上查看各个提案目前都在哪个阶段了。&lt;/p&gt;
+
+&lt;p&gt;所以，我们该如何使用这一大堆术语呢？下面的列表或许能帮助到你：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;ECMAScript&lt;/strong&gt;：一个由 ECMA International 进行标准化，TC39 委员会进行监督的语言。通常用于指代标准本身。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;JavaScript&lt;/strong&gt;：ECMAScript 标准的各种实现的最常用称呼。这个术语并不局限于某个特定版本的 ECMAScript 规范，并且可能被用于任何不同程度的任意版本的 ECMAScript 的实现。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ECMAScript 5 (ES5)&lt;/strong&gt;：ECMAScript 的第五版修订，于 2009 年完成标准化。这个规范在所有现代浏览器中都相当完全的实现了。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ECMAScript 6 (ES6) / ECMAScript 2015 (ES2015)&lt;/strong&gt;：ECMAScript 的第六版修订，于 2015 年完成标准化。这个标准被部分实现于大部分现代浏览器。可以查阅&lt;a href=&quot;http://kangax.github.io/compat-table/es6/&quot;&gt;这张兼容性表&lt;/a&gt;来查看不同浏览器和工具的实现情况。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ECMAScript 2016&lt;/strong&gt;：预计的第七版 ECMAScript 修订，计划于明年夏季发布。这份规范具体将包含哪些特性还没有最终确定&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ECMAScript Proposals&lt;/strong&gt;：被考虑加入未来版本 ECMAScript 标准的特性与语法提案，他们需要经历五个阶段：Strawman（稻草人），Proposal（提议），Draft（草案），Candidate（候选）以及 Finished （完成）。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;在这整个 Blog 中，我将把目前的 ECMAScript 版本称作 ES6（因为这是大部分开发者最习以为常的），把明年的规范称作 ES2016（因为，与 ES6/ES2015 不同，这个名字将在整个标准化过程中沿用）并且将那些还没有成为 ECMAScript 定稿或草案的未来语言概念称为 ECMAScript 提案或者 JavaScript 提案。我将尽我所能在任何可能引起困惑的场合沿用这篇文章。&lt;/p&gt;
+
+&lt;h4 id=&quot;一些资源&quot;&gt;一些资源&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;TC39 的 &lt;a href=&quot;https://github.com/tc39/ecma262&quot;&gt;Github 仓库&lt;/a&gt;上可以看到所有目前公开的提案&lt;/li&gt;
+  &lt;li&gt;如果你还不熟悉 ES6，Babel 有一个&lt;a href=&quot;https://babeljs.io/docs/learn-es2015/&quot;&gt;很不错的特性概览&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;如果你希望深入 ES6，这里有两本很不错的书： Axel Rauschmayer 的 &lt;a href=&quot;http://exploringjs.com/&quot;&gt;Exploring ES6&lt;/a&gt;和 Nicholas Zakas 的 &lt;a href=&quot;https://leanpub.com/understandinges6&quot;&gt;Understanding ECMAScript 6&lt;/a&gt;。Axel 的博客 &lt;a href=&quot;http://www.2ality.com/&quot;&gt;2ality&lt;/a&gt; 也是很不错的 ES6 资源&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img class=&quot;shadow&quot; width=&quot;320&quot; src=&quot;/img/in-post/post-js-version/keep-calm-and-learn-javascript.png&quot; /&gt;
+&lt;small class=&quot;img-hint&quot;&gt;来学 JavaScript 吧！&lt;/small&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;著作权声明&quot;&gt;著作权声明&lt;/h4&gt;
+
+&lt;p&gt;本文译自 &lt;a href=&quot;http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/&quot;&gt;ES5, ES6, ES2016, ES.Next: What’s going on with JavaScript versioning?&lt;/a&gt; &lt;br /&gt;
+译者 &lt;a href=&quot;http://weibo.com/huxpro&quot;&gt;黄玄&lt;/a&gt;，首次发布于 &lt;a href=&quot;http://huangxuan.me&quot;&gt;Hux Blog&lt;/a&gt;，转载请保留以上链接&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 22 Sep 2015 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/2015/09/22/js-version-%E4%B8%8A%E5%8D%882.43.09/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/09/22/js-version-%E4%B8%8A%E5%8D%882.43.09/</guid>
+        
+        <category>前端开发</category>
+        
+        <category>JavaScript</category>
+        
+        <category>翻译</category>
         
         
       </item>
