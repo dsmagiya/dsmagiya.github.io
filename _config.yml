@@ -1,7 +1,7 @@
 # Site settings
 title: Desheng's Blog
 SEOTitle: ᡩᠰᠮᠠ | Desheng's Blog
-header-img: img/home_bg_nankai.jpg
+header-img: img/ElCapitan.jpg
 email: d.s.magiya@icloud.com
 #description: " | 黄玄，Web & Mobile Lover，Software Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。"
 description: " | Desheng Ma, Physics Major. | "
@@ -20,6 +20,7 @@ github_username:    dsmagiya
 twitter_username:   Ds_magiya
 facebook_username:  dsmagiya
 instagram_username: dsmagiya
+email_username: d.s.magiya@gmail.com
 #linkedin_username:  firstname-lastname-idxxxx
 
 
@@ -67,8 +68,8 @@ netease_comment: false
 # ba_track_id: [your track id]
 
 # Google Analytics
-ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
-ga_domain: huangxuan.me
+# ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+# ga_domain: huangxuan.me
 
 
 

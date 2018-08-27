@@ -1,0 +1,27 @@
+---
+layout:     post
+title:      "Welcome to Desheng's Blog"
+subtitle:   " \"So it is finally on.\""
+date:       2018-08-27 12:00:00
+author:     "Desheng"
+header-img: "img/post-bg-2015.jpg" 
+header-mask:  0.3
+catalog:      true
+multilingual: true
+tags:
+    - 生活
+    - Life
+---
+
+
+<!-- Chinese Version -->
+<div class="zh post-container">
+    {% capture about_zh %}{% include posts/2018-08-27-start/zh.md %}{% endcapture %}
+    {{ about_zh | markdownify }}
+</div>
+
+<!-- English Version -->
+<div class="en post-container">
+    {% capture about_en %}{% include posts/2018-08-27-start/en.md %}{% endcapture %}
+    {{ about_en | markdownify }}
+</div>
