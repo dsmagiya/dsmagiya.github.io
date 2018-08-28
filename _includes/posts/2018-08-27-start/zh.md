@@ -16,7 +16,7 @@
 
 回想起来，不可谓不曲折，不可谓不神奇。
 
-最近捡起来滑板来玩，一下子家里小区的一个个场景、一条条道路涌入脑海，回忆起了最无忧无虑的一阵时光：大清早六七点拎着[蛇板](http://www.typeisbeautiful.com/)和小伙伴们“去坡儿那晨练”，哼着周杰伦的[稻香](https://www.youtube.com/watch?v=sHD_z90ZKV0&list=PLz-sfcPaphTXiPTXYKlKtlLmsGZjcUuWU)，玩累了就坐在哪个台阶上玩游戏机：抓抓[口袋妖怪](https://zh.wikipedia.org/wiki/精灵宝可梦系列)或者打打[真三国无双](https://ja.wikipedia.org/wiki/真・三國無双シリーズ)。
+最近捡起来滑板来玩，一下子家里小区的一个个场景、一条条道路涌入脑海，回忆起了最无忧无虑的一阵时光：大清早六七点拎着[蛇板](https://en.wikipedia.org/wiki/Caster_board)和小伙伴们“去坡儿那晨练”，哼着周杰伦的[稻香](https://www.youtube.com/watch?v=sHD_z90ZKV0&list=PLz-sfcPaphTXiPTXYKlKtlLmsGZjcUuWU)，玩累了就坐在哪个台阶上玩游戏机：抓抓[口袋妖怪](https://zh.wikipedia.org/wiki/精灵宝可梦系列)或者打打[真三国无双](https://ja.wikipedia.org/wiki/真・三國無双シリーズ)。
 
 现在时不时沿着哈德逊河滑滑，风景真美，却不免少了些欢笑玩闹。
 
