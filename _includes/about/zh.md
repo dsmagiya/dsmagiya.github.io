@@ -1,10 +1,8 @@
 > 语到极致是平常。
 
-
-物理专业本科生，<!-- [Web 工会](https://medium.com/ben-and-dion/team-web-3315aa447fb2#.359a9c6cl)活跃成员。目前在 [Facebook](https://www.facebook.com/) 写 [Reason](https://reasonml.github.io/) 与 [Messenger.com](http://messenger.com/) ，曾被招募为淘宝网 · [阿里旅行](http://alitrip.com)前端工程师、微影时代 · [微票儿](http://www.wepiao.com/?r=movie)前端基础工程团队负责人、[饿了么](https://ele.me/) · 大前端团队 · [PWA 顾问](https://medium.com/elemefe/upgrading-ele-me-to-progressive-web-app-2a446832e509)。 -->
+物理专业本科生，
 目前在[哥伦比亚大学 Columbia University](https://www.columbia.edu)实习，就读于[南开大学 Nankai University](http://www.nankai.edu.cn)。
-<!-- 
-一些作品和开源软件项目，👉 戳 [Portfolio](/portfolio)、[Github](http://github.com/huxpro)、[演说.io](https://zhuanlan.zhihu.com/p/21280918)。  -->
+
 
 #### News
 - __2018年4月__ 实习生身份加入哥伦比亚大学物理系 WillLab 实验室。
@@ -19,9 +17,9 @@
 - [Abstract: A09.00003 : Evolution of a1/a2 Domains in Strained Ferroelectric Thin Films][2] ·  <br/> [APS March Meeting 2018，Los Angeles, California](https://meetings.aps.org/Meeting/MAR18)
 
 
-#### Curriculum Vitae
+<!-- #### Curriculum Vitae
 
-- 👉 [Curriculum Vitae of Desheng Ma][1]
+- 👉 [Curriculum Vitae of Desheng Ma][1] -->
 
 #### Personal 
 
