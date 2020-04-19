@@ -2,7 +2,7 @@
 
 应用物理 PhD 在读，啥都整不明白又啥都想整一下。
 
-[康村孤寡](https://www.cornell.edu)，曾混迹[哥谭](https://www.columbia.edu)、[八里台](http://www.nankai.edu.cn)。
+[康村孤寡](https://www.cornell.edu)，曾混迹[晨边高地](https://www.columbia.edu)、[八里台](http://www.nankai.edu.cn)。
 
 
 #### 折腾啥呢
