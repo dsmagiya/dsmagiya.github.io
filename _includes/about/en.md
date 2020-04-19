@@ -2,19 +2,30 @@
 
 > Simplicity is beauty.
 
-Physics undergraduate student, student intern at [Columbia University in the City of New York, New York, US](https://www.columbia.edu), studying at [南开大学 Nankai University, Tianjin, China](http://www.nankai.edu.cn)
+Graduate student at Cornell Applied Physics.
+
+Nothing special.
+
+
+#### What's going on
+
+- Covid-19 makes ORIE6510 a project: [COVID-19 CTMC](https://zhuanlan.zhihu.com/p/128979798)
 
 #### News
-- __July 2018__ Joined WillLab, Department of Physics, Columbia University as a student intern.
+- __2020年4月__ 博士生涯的正式开启终于初现苗头
+- __2019年8月__ 入读康村，踏上读博不归路
+- __2019年6月__ 本科毕业，离开了哏都八里台
+- __2018年4月__ 再次重返纽约，依然混迹 Broadway & Amsterdam
+- __2016年9月__ 重返纽约，混迹 Broadway & Amsterdam
 
-#### Publication 
+<!-- #### Publication 
 * Feng, Y., Tang, Y., Ma, D., Zhu, Y., Zou, M., Han, M., ... & Ma, X. (2018). [Thickness-Dependent Evolution of Piezoresponses and Stripe 90° Domains in (101)-Oriented Ferroelectric PbTiO3 Thin Films.][5] ACS applied materials & interfaces, 10(29), 24627-24637.
 * Han, M. J., Wang, Y. J., Ma, D. S., Zhu, Y. L., Tang, Y. L., Liu, Y., ... & Ma, X. L. (2018). [Coexistence of rhombohedral and orthorhombic phases in ultrathin BiFeO3 films driven by interfacial oxygen octahedral coupling.][4] Acta Materialia, 145, 220-226.
-* Xu, Yaobin., Ma, Desheng., and Ma, Xiuliang. [Microstructural investigation of goose egg shell by SEM.][3] Journal of Chinese Electron Microscopy Society (2015).
+* Xu, Yaobin., Ma, Desheng., and Ma, Xiuliang. [Microstructural investigation of goose egg shell by SEM.][3] Journal of Chinese Electron Microscopy Society (2015). -->
 
-#### Talks
+<!-- #### Talks
 
-- [Abstract: A09.00003 : Evolution of a1/a2 Domains in Strained Ferroelectric Thin Films][2] ·  <br/> [APS March Meeting 2018，Los Angeles, California](https://meetings.aps.org/Meeting/MAR18)
+- [Abstract: A09.00003 : Evolution of a1/a2 Domains in Strained Ferroelectric Thin Films][2] ·  <br/> [APS March Meeting 2018，Los Angeles, California](https://meetings.aps.org/Meeting/MAR18) -->
 
 
 <!-- #### Curriculum Vitae
