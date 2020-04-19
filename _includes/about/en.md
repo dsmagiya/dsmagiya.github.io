@@ -2,7 +2,7 @@
 
 > Simplicity is beauty.
 
-Graduate student at Cornell Applied Physics.
+Graduate student at [Cornell Applied Physics](https://www.aep.cornell.edu/aep).
 
 Nothing special.
 
