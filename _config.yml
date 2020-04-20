@@ -107,8 +107,12 @@ page-mathjax: false
 # Friends
 friends: [
     {
-        title: "Mike Hunag",
+        title: "Pipi Huang",
         href: "https://www.instagram.com/pipi_huang0830/"
-    }
+    },
+    # {
+    #     title: "Pipi Huang",
+    #     href: "https://www.instagram.com/pipi_huang0830/"
+    # }
     # ,
 ]
