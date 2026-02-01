@@ -23,20 +23,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-projects",
-          title: "projects",
-          description: "A growing collection of your cool projects.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/projects/";
-          },
-        },{id: "nav-repositories",
-          title: "repositories",
-          description: "Edit the `_data/repositories.yml` and change the `github_users` and `github_repos` lists to include your own GitHub profile and repositories.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/repositories/";
-          },
         },{id: "nav-cv",
           title: "CV",
           description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
@@ -44,19 +30,12 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "nav-teaching",
-          title: "teaching",
-          description: "Course materials, schedules, and resources for classes taught.",
+        },{id: "nav-miscellaneous",
+          title: "miscellaneous",
+          description: "Outside the lab/office.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/teaching/";
-          },
-        },{id: "nav-people",
-          title: "people",
-          description: "members of the lab or group",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/people/";
+            window.location.href = "/miscellaneous/";
           },
         },{id: "dropdown-bookshelf",
               title: "bookshelf",
@@ -451,6 +430,18 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
+          section: "News",},{id: "news-our-paper-information-in-4d-stem-where-it-is-and-how-to-use-it-is-online-and-currently-under-revision-at-ultramicroscopy",
+          title: 'Our paper Information in 4D-STEM: Where it is, and How to Use it...',
+          description: "",
+          section: "News",},{id: "news-our-paper-using-aberrations-to-improve-dose-efficient-tilt-corrected-4d-stem-imaging-is-published-in-microscopy-and-microanalysis",
+          title: 'Our paper Using Aberrations to Improve Dose-Efficient Tilt-corrected 4D-STEM Imaging is published in...',
+          description: "",
+          section: "News",},{id: "news-i-will-be-presenting-information-in-4d-stem-where-it-is-and-how-to-use-it-at-the-2026-mrs-spring-meeting-amp-amp-exhibit-april-26-may-1-in-honolulu-hawai-i",
+          title: 'I will be presenting Information in 4D-STEM: Where it is, and How to...',
+          description: "",
+          section: "News",},{id: "news-i-will-be-presenting-using-aberrations-to-improve-dose-efficient-tilt-corrected-4d-stem-imaging-at-the-the-microscopy-amp-amp-microanalysis-2026-august-2-6-in-milwaukee-wi",
+          title: 'I will be presenting Using Aberrations to Improve Dose-Efficient Tilt-corrected 4D-STEM Imaging at...',
+          description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
           description: "with background image",
@@ -511,42 +502,35 @@ ninja.data = [{
         title: 'CV',
         section: 'Socials',
         handler: () => {
-          window.open("/assets/pdf/example_pdf.pdf", "_blank");
+          window.open("/assets/pdf/Desheng_CV_2025.pdf", "_blank");
         },
       },{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
         handler: () => {
-          window.open("mailto:%79%6F%75@%65%78%61%6D%70%6C%65.%63%6F%6D", "_blank");
-        },
-      },{
-        id: 'social-inspire',
-        title: 'Inspire HEP',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://inspirehep.net/authors/1010907", "_blank");
-        },
-      },{
-        id: 'social-rss',
-        title: 'RSS Feed',
-        section: 'Socials',
-        handler: () => {
-          window.open("/feed.xml", "_blank");
+          window.open("mailto:%64%6D%61%31@%62%6E%6C.%67%6F%76", "_blank");
         },
       },{
         id: 'social-scholar',
         title: 'Google Scholar',
         section: 'Socials',
         handler: () => {
-          window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
+          window.open("https://scholar.google.com/citations?user=rs92hE4AAAAJ", "_blank");
         },
       },{
-        id: 'social-custom_social',
-        title: 'Custom_social',
+        id: 'social-linkedin',
+        title: 'LinkedIn',
         section: 'Socials',
         handler: () => {
-          window.open("https://www.alberteinstein.com/", "_blank");
+          window.open("https://www.linkedin.com/in/desheng-ma-949339135", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/dsmagiya", "_blank");
         },
       },{
       id: 'light-theme',
