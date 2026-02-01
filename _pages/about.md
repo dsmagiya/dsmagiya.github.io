@@ -36,9 +36,9 @@ My research focuses on developing new imaging methods in advanced electron micro
 
 **Primary research interests**: \\
 4D-STEM and ptychography;
-TEM/STEM methodology/instrumentation
-Low-dimensional and quantum materials 
-Machine learning and Bayesian statistics
+TEM/STEM methodology/instrumentation;
+Low-dimensional and quantum materials;
+Machine learning and Bayesian statistics;
 
 If you are interested in my research or have any questions, please feel free to contact me at: [dma1@bnl.gov](mailto:dma1@bnl.gov) or [dm852@cornell.edu](mailto:dm852@cornell.edu).
 
