@@ -4,41 +4,6 @@
 @string{aps = {American Physical Society,}}
 @string{arxiv = {arXiv preprint,}}
 
-@article{ma_2025_Emittanceminimizationaberrationa,
-  title = {Emittance Minimization for Aberration Correction {{I}}: {{Aberration}} Correction of an Electron Microscope without Knowing the Aberration Coefficients},
-  shorttitle = {Emittance Minimization for Aberration Correction {{I}}},
-  author = {Ma, Desheng and Zeltmann, Steven E. and Zhang, Chenyu and Baraissov, Zhaslan and Shao, Yu-Tsun and Duncan, Cameron and Maxson, Jared and Edelen, Auralee and Muller, David A.},
-  year = 2025,
-  month = jul,
-  journal = {Ultramicroscopy},
-  volume = {273},
-  pages = {114137},
-  issn = {0304-3991},
-  doi = {10.1016/j.ultramic.2025.114137},
-  urldate = {2026-02-01},
-  abstract = {Precise alignment of the electron beam is critical for successful application of scanning transmission electron microscopes (STEM) to understanding materials at atomic level. Despite the success of aberration correctors, aberration correction is still a complex process. Here we approach aberration correction from the perspective of accelerator physics and show it is equivalent to minimizing the emittance growth of the beam, the span of the phase space distribution of the probe. We train a deep learning model to predict emittance growth from experimentally accessible Ronchigrams. Both simulation and experimental results show the model can capture the emittance variation with aberration coefficients accurately. We further demonstrate the model can act as a fast-executing function for the global optimization of the lens parameters. Our approach enables new ways to quickly quantify and automate aberration correction that takes advantage of the rapid measurements possible with high-speed electron cameras. In part II of the paper, we demonstrate how the emittance metric enables rapid online tuning of the aberration corrector using Bayesian optimization.},
-  keywords = {Aberration correction,Beam emittance,Machine learning,Transmission electron microscopy},
-  preview={part1_figure2.png}
-}
-
-
-@article{ma_2025_Emittanceminimizationaberrationb,
-  title = {Emittance Minimization for Aberration Correction {{II}}: {{Physics-informed Bayesian}} Optimization of an Electron Microscope},
-  shorttitle = {Emittance Minimization for Aberration Correction {{II}}},
-  author = {Ma, Desheng and Zeltmann, Steven E. and Zhang, Chenyu and Baraissov, Zhaslan and Shao, Yu-Tsun and Duncan, Cameron and Maxson, Jared and Edelen, Auralee and Muller, David A.},
-  year = 2025,
-  month = jul,
-  journal = {Ultramicroscopy},
-  volume = {273},
-  pages = {114138},
-  issn = {0304-3991},
-  doi = {10.1016/j.ultramic.2025.114138},
-  urldate = {2026-02-01},
-  abstract = {Aberration-corrected Scanning Transmission Electron Microscopy (STEM) has become an essential tool in understanding materials at the atomic scale. However, tuning the aberration corrector to produce a sub-\AA ngstr\"om probe is a complex and time-costly procedure, largely due to the difficulty of precisely measuring the optical state of the system. When measurements are both costly and noisy, Bayesian methods provide rapid and efficient optimization. To this end, we develop a Bayesian approach to fully automate the process by minimizing a new quality metric, beam emittance, which is shown to be equivalent to performing aberration correction. In part I, we derived several important properties of the beam emittance metric and trained a deep neural network to predict beam emittance growth from a single Ronchigram. Here we use this as the black box function for Bayesian optimization and demonstrate automated tuning of simulated and real electron microscopes. We explore different surrogate functions for the Bayesian optimizer and implement a deep neural network kernel to effectively learn the interactions between different control channels without the need to explicitly measure a full set of aberration coefficients. Both simulation and experimental results show the proposed method outperforms conventional approaches by achieving a better optical state with a higher convergence rate.},
-  keywords = {Aberration correction,Bayesian optimization,Beam emittance,Machine learning,Transmission electron microscopy},
-  preview={part2_figure4.png}
-}
-
 
 @misc{maInformation4DSTEMWhere2025,
   title = {Information in {{4D-STEM}}: {{Where}} It Is, and {{How}} to {{Use}} It},
@@ -85,3 +50,58 @@
   langid = {english},
   preview={acBF_MaM_abstract2025.png},
 }
+
+@article{lee_2025_PtyRADHighPerformanceFlexible,
+  title = {PtyRAD: A High-Performance and Flexible Ptychographic Reconstruction Framework with Automatic Differentiation},
+  shorttitle = {PtyRAD},
+  author = {Lee, Chia-Hao and Zeltmann, Steven E and Yoon, Dasol and Ma, Desheng and Muller, David A},
+  year = {2025},
+  month = {aug},
+  journal = {Microscopy and Microanalysis},
+  volume = {31},
+  number = {4},
+  pages = {ozaf070},
+  issn = {1431-9276},
+  doi = {10.1093/mam/ozaf070},
+  urldate = {2026-02-01},
+  abstract = {Electron ptychography has recently achieved unprecedented resolution, offering valuable insights across diverse material systems, including in three dimensions. However, high-quality ptychographic reconstruction is computationally expensive and time consuming, requiring a significant amount of manual tuning even for experts. Additionally, essential tools for ptychographic analysis are often scattered across multiple software packages, with some advanced features available only in costly commercial software like MATLAB. To address these challenges, we introduce PtyRAD (Ptychographic Reconstruction with Automatic Differentiation), an open-source software framework that offers a comprehensive, flexible, and computationally efficient solution for electron ptychography. PtyRAD provides seamless optimization of multiple parameters---such as sample thickness, local tilts, probe positions, and mixed probe and object modes---using gradient-based methods with automatic differentiation. By utilizing PyTorch's highly optimized tensor operations, PtyRAD achieves up to a 24\texttimes{} speedup in reconstruction time compared to existing packages without compromising image quality. In addition, we propose a real-space depth regularization, which avoids wrap-around artifacts and can be useful for twisted two-dimensional material datasets and vertical heterostructures. Moreover, PtyRAD integrates a Bayesian optimization workflow that streamlines hyperparameter selection. We hope the open-source nature of PtyRAD will foster reproducibility and community-driven development for future advances in ptychographic imaging.},
+  preview = {ptyrad.png},
+  code = {{https://pypi.org/project/ptyrad/}}
+}
+
+@article{ma_2025_Emittanceminimizationaberrationa,
+  title = {Emittance Minimization for Aberration Correction {{I}}: {{Aberration}} Correction of an Electron Microscope without Knowing the Aberration Coefficients},
+  shorttitle = {Emittance Minimization for Aberration Correction {{I}}},
+  author = {Ma, Desheng and Zeltmann, Steven E. and Zhang, Chenyu and Baraissov, Zhaslan and Shao, Yu-Tsun and Duncan, Cameron and Maxson, Jared and Edelen, Auralee and Muller, David A.},
+  year = 2025,
+  month = jul,
+  journal = {Ultramicroscopy},
+  volume = {273},
+  pages = {114137},
+  issn = {0304-3991},
+  doi = {10.1016/j.ultramic.2025.114137},
+  urldate = {2026-02-01},
+  abstract = {Precise alignment of the electron beam is critical for successful application of scanning transmission electron microscopes (STEM) to understanding materials at atomic level. Despite the success of aberration correctors, aberration correction is still a complex process. Here we approach aberration correction from the perspective of accelerator physics and show it is equivalent to minimizing the emittance growth of the beam, the span of the phase space distribution of the probe. We train a deep learning model to predict emittance growth from experimentally accessible Ronchigrams. Both simulation and experimental results show the model can capture the emittance variation with aberration coefficients accurately. We further demonstrate the model can act as a fast-executing function for the global optimization of the lens parameters. Our approach enables new ways to quickly quantify and automate aberration correction that takes advantage of the rapid measurements possible with high-speed electron cameras. In part II of the paper, we demonstrate how the emittance metric enables rapid online tuning of the aberration corrector using Bayesian optimization.},
+  keywords = {Aberration correction,Beam emittance,Machine learning,Transmission electron microscopy},
+  preview={part1_figure2.png}
+}
+
+
+@article{ma_2025_Emittanceminimizationaberrationb,
+  title = {Emittance Minimization for Aberration Correction {{II}}: {{Physics-informed Bayesian}} Optimization of an Electron Microscope},
+  shorttitle = {Emittance Minimization for Aberration Correction {{II}}},
+  author = {Ma, Desheng and Zeltmann, Steven E. and Zhang, Chenyu and Baraissov, Zhaslan and Shao, Yu-Tsun and Duncan, Cameron and Maxson, Jared and Edelen, Auralee and Muller, David A.},
+  year = 2025,
+  month = jul,
+  journal = {Ultramicroscopy},
+  volume = {273},
+  pages = {114138},
+  issn = {0304-3991},
+  doi = {10.1016/j.ultramic.2025.114138},
+  urldate = {2026-02-01},
+  abstract = {Aberration-corrected Scanning Transmission Electron Microscopy (STEM) has become an essential tool in understanding materials at the atomic scale. However, tuning the aberration corrector to produce a sub-\AA ngstr\"om probe is a complex and time-costly procedure, largely due to the difficulty of precisely measuring the optical state of the system. When measurements are both costly and noisy, Bayesian methods provide rapid and efficient optimization. To this end, we develop a Bayesian approach to fully automate the process by minimizing a new quality metric, beam emittance, which is shown to be equivalent to performing aberration correction. In part I, we derived several important properties of the beam emittance metric and trained a deep neural network to predict beam emittance growth from a single Ronchigram. Here we use this as the black box function for Bayesian optimization and demonstrate automated tuning of simulated and real electron microscopes. We explore different surrogate functions for the Bayesian optimizer and implement a deep neural network kernel to effectively learn the interactions between different control channels without the need to explicitly measure a full set of aberration coefficients. Both simulation and experimental results show the proposed method outperforms conventional approaches by achieving a better optical state with a higher convergence rate.},
+  keywords = {Aberration correction,Bayesian optimization,Beam emittance,Machine learning,Transmission electron microscopy},
+  preview={part2_figure4.png}
+}
+
+
