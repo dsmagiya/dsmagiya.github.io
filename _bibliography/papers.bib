@@ -3,6 +3,7 @@
 
 @string{aps = {American Physical Society,}}
 @string{arxiv = {arXiv preprint,}}
+@string{ssrn = {SSRN preprint,}}
 
 
 @misc{maInformation4DSTEMWhere2025,
@@ -17,7 +18,7 @@
   abstract = {Contrast transfer mechanisms for electron scattering have been extensively studied in transmission electron microscopy. Here we revisit H. Rose's generalized contrast formalism from scattering theory to understand where information is encoded in four-dimensional scanning transmission electron microscopy (4D-STEM) data, and consequently identify new imaging modes that can also serve as crude but fast approximations to ptychography. We show that tilt correction and summation of the symmetric and antisymmetric scattering components within the bright-field disk -- corresponding to tilt-corrected bright field (tcBF) and tilt-corrected differential phase contrast (tcDPC) respectively -- enables aberration-corrected, bright-field phase contrast imaging (acBF) that makes maximal use of the 4D-STEM information under the weak phase object approximation (WPOA). Beyond the WPOA, we identify the contrast transfer from the interference between inelastic/plural scattering electrons, which show up as quadratic terms, and show that under overfocus conditions, contrast can be further enhanced at selected frequencies, similar to phase-contrast TEM imaging. There is also usable information encoded in the dark field region which we demonstrate by constructing a tilt-corrected dark-field image (tcDF) that sums up the incoherent scattering components and holds promise for depth sectioning of strong scatterers. This framework generalizes phase contrast theory in conventional/scanning transmission electron microscopy to 4D-STEM and provides analytical models and insights into full-field iterative ptychography, which blindly exploits all above contrast mechanisms.},
   keywords = {Condensed Matter - Materials Science,Physics - Optics},
   preview={acBF_ultra.png},
-  abbr={arxiv},
+  abbr={arXiv},
   selected={true}
 }
 
@@ -36,8 +37,25 @@
   archiveprefix = {arXiv},
   keywords = {Condensed Matter - Materials Science,Physics - Optics},
   preview={acBF_MM.png},
-  abbr={arxiv},
+  abbr={arXiv},
   selected={true}
+}
+
+@article{shi_2025_ElectronPtychographyImages,
+  title = {Electron {{Ptychography Images Hydrogen Atom Superlattices}} and {{3D Inhomogeneities}} in {{Palladium Hydride Nanoparticles}}},
+  author = {Shi, Zixiao and Li, Qihao and Mishra, Himani and Ma, Desheng and Abru{\~n}a, H{\'e}ctor D. and Muller, David A.},
+  year = 2025,
+  month = oct,
+  journal = {Journal of the American Chemical Society},
+  volume = {147},
+  number = {43},
+  pages = {39020--39025},
+  publisher = {American Chemical Society},
+  issn = {0002-7863},
+  doi = {10.1021/jacs.5c13741},
+  urldate = {2026-02-02},
+  abstract = {When hydrogen atoms occupy interstitial sites in metal lattices, they form metal hydrides (MHx), whose structural and electronic properties can differ significantly from those of the host metals. Determining where the hydrogen is located within the MHx is crucial for predicting and understanding the resultant unique physical and electronic properties of the hydride. Yet, directly imaging hydrogen within a host material remains a major challenge due to its weak signal in conventional X-ray and electron imaging techniques. Here, we employ electron ptychography, a scanning transmission electron microscopy (STEM) technique, to image the three-dimensional (3D) distribution of H atoms in palladium hydride (PdHx) nanocubes, one of the most studied and industrially relevant MHx materials. We observe an unexpected one-dimensional superlattice ordering of hydrogen within the PdHx nanocubes and 3D hydrogen clustering in localized regions within the PdHx nanocubes, revealing spatial heterogeneity in metal hydride nanoparticles previously inaccessible by other methods.},
+  preview={h_jacs.jpg},
 }
 
 @article{zeltmannNonIterativePhaseRetrieval2025,
@@ -108,4 +126,73 @@
   selected={true}
 }
 
+@article{ma_2025_EmittanceMinimizationAberration,
+  title = {Emittance {{Minimization}} for {{Aberration Correction}} via {{Machine Learning}} and {{Bayesian Optimization}}},
+  author = {Ma, Desheng and Zeltmann, Steven E and Zhang, Chenyu and Shao, Yu-Tsun and Baraissov, Zhaslan and Duncan, Cameron and Edelen, Auralee and Maxon, Jared and Muller, David A},
+  year = 2025,
+  month = jul,
+  journal = {Microscopy and Microanalysis},
+  volume = {31},
+  number = {Supplement\_1},
+  pages = {ozaf048.1068},
+  issn = {1431-9276},
+  doi = {10.1093/mam/ozaf048.1068},
+  urldate = {2026-02-02},
+  abstract = {Precise control of the electron beam shape is critical for the successful application of scanning transmission electron microscopes (STEM) to understanding materials at atomic level. However, the nature of magnetic lenses introduces aberrations and and aberration correction is currently a complex and time-consuming procedure. Here we approach the problem from the perspective of accelerator physics by noting the equivalence between aberration correction and phase space beam emittance minimization [1]. We then show how a convolutional neural network (CNN) can be trained to predict beam emittance growth from Ronchigrams, enabling a one-to-one mapping served as the black-box function on which we apply Bayesian optimization (BO) to optimize for fully-automated aberration-corrector tuning [2].},
+  preview={2025MM_fig2_4.jpg},
+}
 
+
+@article{maInformationLimitDose2024,
+  title = {Information {{Limit}} and {{Dose Efficiency}} of {{Electron Ptychography}}},
+  author = {Ma, Desheng and Muller, David},
+  year = 2024,
+  month = jul,
+  journal = {Microscopy and Microanalysis},
+  volume = {30},
+  number = {Supplement\_1},
+  pages = {ozae044.910},
+  issn = {1431-9276},
+  doi = {10.1093/mam/ozae044.910},
+  urldate = {2025-03-25},
+  abstract = {Recent advances in direct electron detectors for electron microscopy has enabled significant progress in achieving higher spatial resolution with phase retrieval reconstruction methods such as ptychography. In contrast to conventional imaging modes, e.g., BF, ADF, full-field iterative ptychographic reconstruction methods utilize the complete distribution of scattered electrons in the convergent beam electron diffraction (CBED) pattern recorded on the pixelated detectors, and concurrently updates both the object and the probe functions [1]. This allows for a spatial resolution well beyond the traditional numerical-aperture-limited resolution with high dose efficiency. Dose efficiency could be further improved by mixed-state electron ptychography accounting for the partial coherence of the electron beam [2].},
+  preview={mm2024.png},
+}
+
+@article{maPhysicsinformedBayesianOptimization2023,
+  title = {Physics-Informed {{Bayesian Optimization}} of an {{Electron Microscope}}},
+  author = {Ma, Desheng and Zhang, Chenyu and Shao, Yu-Tsun and Baraissov, Zhaslan and Duncan, Cameron and Hanuka, Adi and Edelen, Auralee and Maxon, Jared and Muller, David},
+  year = 2023,
+  month = aug,
+  journal = {Microscopy and Microanalysis},
+  volume = {29},
+  number = {Supplement\_1},
+  pages = {1875--1877},
+  issn = {1431-9276},
+  doi = {10.1093/micmic/ozad067.968},
+  urldate = {2024-04-10},
+  abstract = {Achieving sub-Angstrom resolution by aberration correction in an electron microscope requires the precise control of a large set of multipole electron-optical elements whose multidimensional optimization is comparable to the complexity of a synchrotron light source. We draw on this experience by realizing the equivalence between aberration correction and phase space beam emittance minimization. We then show a convolutional neural network (CNN) can be trained to predict beam emittance from single Ronchigrams, providing a bounded metric that enable Bayesian optimization (BO) for the autonomous aberration correction of the microscope.},
+  preview={part2_figure_1.png},
+}
+
+
+@misc{ma_2020_ChangeDetectionCorePeriphery,
+  type = {{{SSRN Scholarly Paper}}},
+  title = {Change {{Detection}} in {{Core-Periphery Networks}}: {{A Case Study}} on {{Detecting Financial Crises}} in the {{Interbank Market}}},
+  shorttitle = {Change {{Detection}} in {{Core-Periphery Networks}}},
+  author = {Ma, Desheng and Mankad, Shawn},
+  year = 2020,
+  month = dec,
+  number = {3742790},
+  eprint = {3742790},
+  publisher = {Social Science Research Network},
+  address = {Rochester, NY},
+  doi = {10.2139/ssrn.3742790},
+  urldate = {2026-02-02},
+  abstract = {We develop and present a new methodology to detect regime changes within a sequence of sparse networks that have overlapping and evolving community structure. The core of the methodology is a non-negative matrix factorization that maximizes a Poisson likelihood subject to a penalty that accounts for sparsity in the network. By fitting the factorization model over a rolling window with a fast numerical optimization algorithm, change detection is accomplished by statistical monitoring of the matrix factors' evolution. Using synthetic and real financial interbank lending networks, we demonstrate that the proposed methodology compares favorably with alternative techniques for on-the-go network change detection.},
+  archiveprefix = {Social Science Research Network},
+  langid = {english},
+  keywords = {change point detection,financial networks,interbank market,matrix factorization},
+  abbr={SSRN},
+  preview={emid_paper.jpg},
+}
