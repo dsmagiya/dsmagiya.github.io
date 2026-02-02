@@ -10,10 +10,10 @@ profile:
   image: IMG_1951.JPG
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Bldg 480, Room 1-117</p>
-    <p>76 Cornell Ave</p>
-    <p>Brookhaven National Lab</p>
-    <p>Upron, NY 11973</p>
+    <p>Bldg 480, Room 1-117,</p>
+    <p>76 Cornell Ave,</p>
+    <p>Brookhaven National Lab,</p>
+    <p>Upton, NY 11973</p>
 
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
