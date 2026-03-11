@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-03-02'
+  last_updated: '2026-03-11'
 papers:
   rs92hE4AAAAJ:0EnyYjriUFMC:
     citations: 0
@@ -58,7 +58,7 @@ papers:
     title: Coexistence of rhombohedral and orthorhombic phases in ultrathin BiFeO3 films driven by interfacial oxygen octahedral coupling
     year: '2018'
   rs92hE4AAAAJ:hqOjcs7Dif8C:
-    citations: 9
+    citations: 10
     title: 'Ptyrad: A high-performance and flexible ptychographic reconstruction framework with automatic differentiation'
     year: '2025'
   rs92hE4AAAAJ:kNdYIx-mwKoC:
