@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-03-11'
+  last_updated: '2026-03-18'
 papers:
   rs92hE4AAAAJ:0EnyYjriUFMC:
     citations: 0
@@ -50,7 +50,7 @@ papers:
     title: Information Limit and Dose Efficiency of Electron Ptychography
     year: '2024'
   rs92hE4AAAAJ:_kc_bZDykSQC:
-    citations: 1
+    citations: 2
     title: Using Aberrations to Improve Dose-Efficient Tilt-corrected 4D-STEM Imaging
     year: '2025'
   rs92hE4AAAAJ:d1gkVwhDpl0C:
@@ -64,7 +64,7 @@ papers:
   rs92hE4AAAAJ:kNdYIx-mwKoC:
     citations: 3
     title: 'Information in 4D-STEM: Where it is, and How to Use it'
-    year: '2025'
+    year: '2026'
   rs92hE4AAAAJ:roLk4NBRz8UC:
     citations: 4
     title: 'Emittance minimization for aberration correction ii: Physics-informed bayesian optimization of an electron microscope'
