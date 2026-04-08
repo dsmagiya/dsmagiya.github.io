@@ -1,8 +1,8 @@
 metadata:
-  last_updated: '2026-03-18'
+  last_updated: '2026-04-08'
 papers:
   rs92hE4AAAAJ:0EnyYjriUFMC:
-    citations: 0
+    citations: 2
     title: 'Mic-hackathon 2024: hackathon on machine learning for electron and scanning probe microscopy'
     year: '2025'
   rs92hE4AAAAJ:2osOgNQ5qMEC:
@@ -14,7 +14,7 @@ papers:
     title: Emittance Minimization for Aberration Correction via Machine Learning and Bayesian Optimization
     year: '2025'
   rs92hE4AAAAJ:4TOpqqG69KYC:
-    citations: 2
+    citations: 4
     title: Observation of multi-order polar radial vortices and their topological transition
     year: '2025'
   rs92hE4AAAAJ:8k81kl-MbHgC:
@@ -30,9 +30,13 @@ papers:
     title: Electron ptychography images hydrogen atom superlattices and 3D inhomogeneities in palladium hydride nanoparticles
     year: '2025'
   rs92hE4AAAAJ:LkGwnXOMwfcC:
-    citations: 5
+    citations: 8
     title: 'Emittance minimization for aberration correction i: Aberration correction of an electron microscope without knowing the aberration coefficients'
     year: '2025'
+  rs92hE4AAAAJ:M3ejUd6NZC8C:
+    citations: 0
+    title: "Depth\u2010Resolved Imaging of Surfaces and Interfaces in MFI\u2010Type Zeolite Crystals via Multislice Electron Ptychography"
+    year: '2026'
   rs92hE4AAAAJ:MXK_kJrjxJIC:
     citations: 0
     title: Atomic Resolution Imaging of 2D Polymers with Tilt-corrected Bright Field (tcBF) Imaging
@@ -58,15 +62,15 @@ papers:
     title: Coexistence of rhombohedral and orthorhombic phases in ultrathin BiFeO3 films driven by interfacial oxygen octahedral coupling
     year: '2018'
   rs92hE4AAAAJ:hqOjcs7Dif8C:
-    citations: 10
+    citations: 12
     title: 'Ptyrad: A high-performance and flexible ptychographic reconstruction framework with automatic differentiation'
     year: '2025'
   rs92hE4AAAAJ:kNdYIx-mwKoC:
-    citations: 3
+    citations: 4
     title: 'Information in 4D-STEM: Where it is, and How to Use it'
     year: '2026'
   rs92hE4AAAAJ:roLk4NBRz8UC:
-    citations: 4
+    citations: 6
     title: 'Emittance minimization for aberration correction ii: Physics-informed bayesian optimization of an electron microscope'
     year: '2025'
   rs92hE4AAAAJ:u-x6o8ySG0sC:
