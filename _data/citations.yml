@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-04-10'
+  last_updated: '2026-04-20'
 papers:
   rs92hE4AAAAJ:0EnyYjriUFMC:
     citations: 2
@@ -50,11 +50,11 @@ papers:
     title: Physics-informed Bayesian optimization of an electron microscope
     year: '2023'
   rs92hE4AAAAJ:_FxGoFyzp5QC:
-    citations: 3
+    citations: 4
     title: Information Limit and Dose Efficiency of Electron Ptychography
     year: '2024'
   rs92hE4AAAAJ:_kc_bZDykSQC:
-    citations: 2
+    citations: 1
     title: Using Aberrations to Improve Dose-Efficient Tilt-corrected 4D-STEM Imaging
     year: '2025'
   rs92hE4AAAAJ:d1gkVwhDpl0C:
@@ -62,13 +62,13 @@ papers:
     title: Coexistence of rhombohedral and orthorhombic phases in ultrathin BiFeO3 films driven by interfacial oxygen octahedral coupling
     year: '2018'
   rs92hE4AAAAJ:hqOjcs7Dif8C:
-    citations: 12
+    citations: 14
     title: 'Ptyrad: A high-performance and flexible ptychographic reconstruction framework with automatic differentiation'
     year: '2025'
   rs92hE4AAAAJ:kNdYIx-mwKoC:
     citations: 4
     title: 'Information in 4D-STEM: Where it is, and How to Use it'
-    year: '2026'
+    year: '2025'
   rs92hE4AAAAJ:roLk4NBRz8UC:
     citations: 7
     title: 'Emittance minimization for aberration correction ii: Physics-informed bayesian optimization of an electron microscope'
