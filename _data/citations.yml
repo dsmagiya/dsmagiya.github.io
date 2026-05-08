@@ -1,21 +1,13 @@
 metadata:
-  last_updated: '2026-04-20'
+  last_updated: '2026-05-08'
 papers:
   rs92hE4AAAAJ:0EnyYjriUFMC:
     citations: 2
     title: 'Mic-hackathon 2024: hackathon on machine learning for electron and scanning probe microscopy'
     year: '2025'
-  rs92hE4AAAAJ:2osOgNQ5qMEC:
-    citations: 0
-    title: Evolution of a1/a2Domains in Strained Ferroelectric Thin Films
-    year: '2018'
   rs92hE4AAAAJ:3fE2CSJIrl8C:
     citations: 0
     title: Emittance Minimization for Aberration Correction via Machine Learning and Bayesian Optimization
-    year: '2025'
-  rs92hE4AAAAJ:4TOpqqG69KYC:
-    citations: 4
-    title: Observation of multi-order polar radial vortices and their topological transition
     year: '2025'
   rs92hE4AAAAJ:8k81kl-MbHgC:
     citations: 1
@@ -54,30 +46,22 @@ papers:
     title: Information Limit and Dose Efficiency of Electron Ptychography
     year: '2024'
   rs92hE4AAAAJ:_kc_bZDykSQC:
-    citations: 1
+    citations: 2
     title: Using Aberrations to Improve Dose-Efficient Tilt-corrected 4D-STEM Imaging
     year: '2025'
-  rs92hE4AAAAJ:d1gkVwhDpl0C:
-    citations: 43
-    title: Coexistence of rhombohedral and orthorhombic phases in ultrathin BiFeO3 films driven by interfacial oxygen octahedral coupling
-    year: '2018'
   rs92hE4AAAAJ:hqOjcs7Dif8C:
-    citations: 14
+    citations: 17
     title: 'Ptyrad: A high-performance and flexible ptychographic reconstruction framework with automatic differentiation'
     year: '2025'
   rs92hE4AAAAJ:kNdYIx-mwKoC:
     citations: 4
-    title: 'Information in 4D-STEM: Where it is, and How to Use it'
-    year: '2025'
+    title: 'Information in 4D-STEM: Where it is, and how to use it'
+    year: '2026'
+  rs92hE4AAAAJ:qxL8FJ1GzNcC:
+    citations: 0
+    title: Direct 3D Imaging of Hydrogen Atoms and Their Spatial Heterogeneity in Palladium Hydride Nanoparticles with Electron Ptychography
+    year: '2026'
   rs92hE4AAAAJ:roLk4NBRz8UC:
     citations: 7
     title: 'Emittance minimization for aberration correction ii: Physics-informed bayesian optimization of an electron microscope'
     year: '2025'
-  rs92hE4AAAAJ:u-x6o8ySG0sC:
-    citations: 25
-    title: "Thickness-Dependent Evolution of Piezoresponses and Stripe 90\xB0 Domains in (101)-Oriented Ferroelectric PbTiO3 Thin Films"
-    year: '2018'
-  rs92hE4AAAAJ:u5HHmVD_uO8C:
-    citations: 28
-    title: Polarization rotation in ultrathin ferroelectrics tailored by interfacial oxygen octahedral coupling
-    year: '2018'
