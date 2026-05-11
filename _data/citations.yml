@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-05-08'
+  last_updated: '2026-05-11'
 papers:
   rs92hE4AAAAJ:0EnyYjriUFMC:
     citations: 2
@@ -10,7 +10,7 @@ papers:
     title: Emittance Minimization for Aberration Correction via Machine Learning and Bayesian Optimization
     year: '2025'
   rs92hE4AAAAJ:8k81kl-MbHgC:
-    citations: 1
+    citations: 2
     title: A Non-Iterative Phase Retrieval Method for Defocused, Coarsely Scanned 4D-STEM Data
     year: '2025'
   rs92hE4AAAAJ:9yKSN-GCB0IC:
@@ -22,7 +22,7 @@ papers:
     title: Electron ptychography images hydrogen atom superlattices and 3D inhomogeneities in palladium hydride nanoparticles
     year: '2025'
   rs92hE4AAAAJ:LkGwnXOMwfcC:
-    citations: 9
+    citations: 10
     title: 'Emittance minimization for aberration correction i: Aberration correction of an electron microscope without knowing the aberration coefficients'
     year: '2025'
   rs92hE4AAAAJ:M3ejUd6NZC8C:
@@ -42,19 +42,19 @@ papers:
     title: Physics-informed Bayesian optimization of an electron microscope
     year: '2023'
   rs92hE4AAAAJ:_FxGoFyzp5QC:
-    citations: 4
+    citations: 5
     title: Information Limit and Dose Efficiency of Electron Ptychography
     year: '2024'
   rs92hE4AAAAJ:_kc_bZDykSQC:
-    citations: 2
-    title: Using Aberrations to Improve Dose-Efficient Tilt-corrected 4D-STEM Imaging
-    year: '2025'
+    citations: 4
+    title: Using aberrations to improve dose-efficient tilt-corrected 4D-STEM imaging
+    year: '2026'
   rs92hE4AAAAJ:hqOjcs7Dif8C:
     citations: 17
     title: 'Ptyrad: A high-performance and flexible ptychographic reconstruction framework with automatic differentiation'
     year: '2025'
   rs92hE4AAAAJ:kNdYIx-mwKoC:
-    citations: 4
+    citations: 11
     title: 'Information in 4D-STEM: Where it is, and how to use it'
     year: '2026'
   rs92hE4AAAAJ:qxL8FJ1GzNcC:
