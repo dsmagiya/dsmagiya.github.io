@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-06-01'
+  last_updated: '2026-06-17'
 papers:
   rs92hE4AAAAJ:0EnyYjriUFMC:
     citations: 2
@@ -50,7 +50,7 @@ papers:
     title: "CP-Squared: A method for change point detection in core\u2013periphery networks"
     year: '2022'
   rs92hE4AAAAJ:Wp0gIr-vW9MC:
-    citations: 4
+    citations: 6
     title: Observation of multi-order polar radial vortices and their topological transition
     year: '2025'
   rs92hE4AAAAJ:YsMSGLbcyi4C:
@@ -66,11 +66,11 @@ papers:
     title: Using aberrations to improve dose-efficient tilt-corrected 4D-STEM imaging
     year: '2026'
   rs92hE4AAAAJ:dhFuZR0502QC:
-    citations: 44
+    citations: 45
     title: Coexistence of rhombohedral and orthorhombic phases in ultrathin BiFeO3 films driven by interfacial oxygen octahedral coupling
     year: '2018'
   rs92hE4AAAAJ:hqOjcs7Dif8C:
-    citations: 17
+    citations: 18
     title: 'Ptyrad: A high-performance and flexible ptychographic reconstruction framework with automatic differentiation'
     year: '2025'
   rs92hE4AAAAJ:kNdYIx-mwKoC:
