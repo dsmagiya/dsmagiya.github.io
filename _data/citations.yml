@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-08-12'
+  last_updated: '2026-09-04'
 papers:
   rs92hE4AAAAJ:-f6ydRqryjwC:
     citations: 0
     title: Improving Low-Dose Three-Dimensional Imaging with Tilt-Corrected 4D-STEM
     year: '2026'
   rs92hE4AAAAJ:0EnyYjriUFMC:
-    citations: 5
+    citations: 7
     title: 'Mic-hackathon 2024: hackathon on machine learning for electron and scanning probe microscopy'
     year: '2025'
   rs92hE4AAAAJ:2osOgNQ5qMEC:
@@ -26,7 +26,7 @@ papers:
     title: A non-iterative phase retrieval method for defocused, coarsely scanned 4D-STEM data
     year: '2025'
   rs92hE4AAAAJ:9ZlFYXVOiuMC:
-    citations: 28
+    citations: 29
     title: Polarization rotation in ultrathin ferroelectrics tailored by interfacial oxygen octahedral coupling
     year: '2018'
   rs92hE4AAAAJ:9yKSN-GCB0IC:
@@ -38,7 +38,7 @@ papers:
     title: Advances in 4D-STEM for Quantum Materials
     year: '2026'
   rs92hE4AAAAJ:KlAtU1dfN6UC:
-    citations: 9
+    citations: 10
     title: Electron ptychography images hydrogen atom superlattices and 3D inhomogeneities in palladium hydride nanoparticles
     year: '2025'
   rs92hE4AAAAJ:L8Ckcad2t8MC:
@@ -46,7 +46,7 @@ papers:
     title: Decoding Aberrations and Information in Phase Space for Electron Microscopy
     year: '2025'
   rs92hE4AAAAJ:LkGwnXOMwfcC:
-    citations: 10
+    citations: 11
     title: 'Emittance minimization for aberration correction I: Aberration correction of an electron microscope without knowing the aberration coefficients'
     year: '2025'
   rs92hE4AAAAJ:M3ejUd6NZC8C:
@@ -86,7 +86,7 @@ papers:
     title: Coexistence of rhombohedral and orthorhombic phases in ultrathin BiFeO3 films driven by interfacial oxygen octahedral coupling
     year: '2018'
   rs92hE4AAAAJ:e5wmG9Sq2KIC:
-    citations: 715
+    citations: 763
     title: Humanity's last exam
     year: '2025'
   rs92hE4AAAAJ:hFOr9nPyWt4C:
@@ -94,15 +94,15 @@ papers:
     title: Why Ptychography Works Better with Aberrations
     year: '2026'
   rs92hE4AAAAJ:hqOjcs7Dif8C:
-    citations: 28
+    citations: 31
     title: 'PtyRAD: a high-performance and flexible ptychographic reconstruction framework with automatic differentiation'
     year: '2025'
-  rs92hE4AAAAJ:j3f4tGmQtD8C:
+  rs92hE4AAAAJ:iH-uZ7U-co4C:
     citations: 0
-    title: "Humanity\u2019s Last Exam"
-    year: Unknown Year
+    title: Three-dimensional imaging of oxygen dopant distribution in SrCuO by electron ptychography
+    year: '2026'
   rs92hE4AAAAJ:kNdYIx-mwKoC:
-    citations: 18
+    citations: 19
     title: 'Information in 4D-STEM: Where it is, and how to use it'
     year: '2026'
   rs92hE4AAAAJ:mB3voiENLucC:
@@ -110,7 +110,7 @@ papers:
     title: Direct High-Resolution Imaging of Covalent Organic Framework Defects
     year: '2026'
   rs92hE4AAAAJ:mVmsd5A6BfQC:
-    citations: 1
+    citations: 3
     title: Strong interplay between polar and structural topologies
     year: '2026'
   rs92hE4AAAAJ:qxL8FJ1GzNcC:
@@ -118,6 +118,6 @@ papers:
     title: Direct 3D Imaging of Hydrogen Atoms and Their Spatial Heterogeneity in Palladium Hydride Nanoparticles with Electron Ptychography
     year: '2026'
   rs92hE4AAAAJ:roLk4NBRz8UC:
-    citations: 7
+    citations: 8
     title: 'Emittance minimization for aberration correction ii: Physics-informed bayesian optimization of an electron microscope'
     year: '2025'
