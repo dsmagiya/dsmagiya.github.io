@@ -61,7 +61,7 @@ Visiting student, Columbia College Visiting Student Program
 
 ## Research Interests
 
-4D-STEM, imaging theory, electron ptychography, computational imaging, ultrafast electron microscopy, electron optics, aberration correction, electron beam physics, complex systems, AI for science
+4D-STEM, imaging theory, electron ptychography, computational imaging, ultrafast electron microscopy, electron optics, aberration correction, instrumentation, complex systems, AI for science
 
 ## Research Experience
 
