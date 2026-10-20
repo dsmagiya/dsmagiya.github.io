@@ -141,7 +141,7 @@ ninja.data = [{
         title: 'CV',
         section: 'Socials',
         handler: () => {
-          window.open("/assets/pdf/Desheng_CV_2025.pdf", "_blank");
+          window.open("/assets/pdf/Desheng_CV_2026.pdf", "_blank");
         },
       },{
         id: 'social-email',
