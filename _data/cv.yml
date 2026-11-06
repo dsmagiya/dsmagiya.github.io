@@ -162,6 +162,9 @@ cv:
     #     icon: fa-solid fa-hashtag
     #     keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
 
+    Conferences and Workshops:
+      - bullet: "**December 3, 2022 — Poster:** [Physics-informed Bayesian Optimization of an Electron Microscope](https://neurips.cc/virtual/2022/56980). Desheng Ma. Machine Learning and the Physical Sciences Workshop, NeurIPS 2022, New Orleans, LA, USA."
+
     Languages:
       - name: Chinese (Mandarin)
         summary: "Native speaker"
